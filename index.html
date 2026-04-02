@@ -2,82 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Aparna — Creative AI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>VELORÉ - AI Storytelling Films</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background-color: #0a0a0a;
-      color: #ffffff;
-      text-align: center;
+      color: #fff;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-    h1 {
-      font-size: 40px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      opacity: 0.7;
-      font-size: 16px;
-    }
-
-    .video-container {
-      margin-top: 40px;
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .video-container iframe {
-      position: absolute;
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.8);
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #ccc;
     }
 
-    .tagline {
-      margin-top: 20px;
+    /* Hero section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0a0a0a;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      letter-spacing: 4px;
+    }
+    .hero p {
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    /* Section styling */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    section p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 20px;
+      text-align: center;
       font-size: 14px;
       opacity: 0.6;
-      letter-spacing: 1px;
+      background-color: #050505;
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>Dream Fragrance — VELORÉ</h1>
-    <p>A cinematic AI-crafted fragrance film exploring memory and emotion.</p>
-
-    <div class="hero-video">
-  <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk?autoplay=1&mute=1&loop=1&playlist=SvL8IVK2Njk"
-          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-  </iframe>
-  <div class="hero-text">
+  <!-- Header / navigation -->
+  <header>
     <h1>VELORÉ</h1>
-    <p>Not a fragrance. A memory.</p>
-  </div>
-</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <div class="tagline">
-      Not a fragrance. A memory.
+  <!-- Hero section -->
+  <div class="hero" id="home">
+    <div>
+      <h2>AI Storytelling Films</h2>
+      <p>Not a fragrance. A memory.</p>
     </div>
   </div>
 
-</body>
-</html>
+  <!-- Work section -->
+  <section id="work">
+    <h3>Featured Work</h3>
+    <p>Here you can showcase your video projects, ads, and visual narratives.</p>
+  </section>
+
+  <!-- About section -->
+  <section id="about">
+    <h3>About</h3>
+    <p>VELORÉ creates AI-powered cinematic storytelling and experimental ad visuals for premium brands. Explore the journey through visuals and emotion.</p>
+  </section>
+
+  <!-- Contact section -->
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: contact@velore.com</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 VELORÉ. All rights reserved.
