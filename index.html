@@ -6,7 +6,6 @@
 
 <title>Aparna — Creative AI Portfolio</title>
 
-<!-- Roboto Thin / Light -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -21,7 +20,7 @@ body {
 /* NAVBAR */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Shift menu left */
   align-items: center;
   padding: 20px 60px;
   position: fixed;
@@ -36,6 +35,7 @@ header h1 {
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 2px;
+  margin-right: 50px;
 }
 
 nav a {
@@ -54,10 +54,10 @@ nav a:hover {
 .hero {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Shift content left */
   align-items: center;
-  text-align: center;
-  padding-top: 60px;
+  text-align: left;
+  padding: 120px 60px 0 60px; /* space below fixed menu */
   background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%);
 }
 
@@ -201,11 +201,10 @@ footer {
   </nav>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <div>
     <h2>AI Storytelling</h2>
-    <p>I craft intelligent AI-driven visual experiences that combine design, emotion, and narrative into captivating digital films and projects. Explore my work below or get in touch directly.</p>
+    <p>I craft intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects. Explore my work below or get in touch directly.</p>
     <a href="#contact">Get in Touch</a>
   </div>
 </div>
@@ -251,8 +250,8 @@ footer {
 <section id="contact">
   <h3>Contact</h3>
   <div class="contact-buttons">
-    <a href="https://www.linkedin.com/in/aparna-r-56769910b/" target="_blank">Connect on LinkedIn</a>
-    <a href="aparnashaa@gmail.com">Email Me</a>
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Connect on LinkedIn</a>
+    <a href="mailto:your@email.com">Email Me</a>
   </div>
 </section>
 
