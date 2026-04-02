@@ -6,18 +6,19 @@
 
 <title>Aparna — AI Storytelling</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<!-- Premium futuristic font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   background: #0a0a0a;
   color: #fff;
 }
 
-/* NAV */
+/* NAVBAR */
 header {
   display: flex;
   justify-content: space-between;
@@ -25,24 +26,29 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(10,10,10,0.6);
+  background: rgba(10,10,10,0.7);
   backdrop-filter: blur(10px);
 }
 
 header h1 {
-  font-family: 'Playfair Display', serif;
   letter-spacing: 2px;
 }
 
 nav a {
-  margin-left: 25px;
+  margin-left: 30px;
   text-decoration: none;
-  color: #ddd;
+  color: #aaa;
   font-size: 14px;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: white;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+nav a:active {
+  color: #fff;
 }
 
 /* HERO */
@@ -55,31 +61,49 @@ nav a:hover {
 }
 
 .hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  letter-spacing: 3px;
+  font-size: 56px;
+  letter-spacing: 4px;
 }
 
 .hero p {
   margin-top: 10px;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
-  padding: 120px 20px;
-  max-width: 1000px;
+  padding: 120px 40px;
+  max-width: 1200px;
   margin: auto;
 }
 
 h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* GRID (VERCEL STYLE) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #1a1a1a;
 }
 
 /* VIDEO */
 .video {
-  margin-top: 40px;
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
@@ -108,29 +132,51 @@ footer {
   <nav>
     <a href="#work">Work</a>
     <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <div class="hero">
   <div>
-    <h2>AI Storytelling</h2>
-    <p>Cinematic ideas. Crafted with AI.</p>
+    <h2>AI STORYTELLING</h2>
+    <p>Future of cinematic imagination</p>
   </div>
 </div>
 
+<!-- WORK SECTION -->
 <section id="work">
-  <h3>Featured Film</h3>
+  <h3>Selected Work</h3>
 
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk" allowfullscreen></iframe>
+  <div class="grid">
+
+    <!-- VIDEO CARD -->
+    <div class="card">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- EMPTY CARDS -->
+    <div class="card">Coming Soon</div>
+    <div class="card">Coming Soon</div>
+    <div class="card">Coming Soon</div>
+
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <h3>About</h3>
   <p>
-    I create cinematic AI-powered storytelling for brands, blending emotion, visuals and narrative into digital films.
+    I create cinematic AI-driven visual storytelling blending emotion,
+    design and narrative into immersive digital experiences.
   </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h3>Contact</h3>
+  <p>Email: your@email.com</p>
 </section>
 
 <footer>
