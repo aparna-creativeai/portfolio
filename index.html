@@ -20,7 +20,7 @@ body {
 /* NAVBAR */
 header {
   display: flex;
-  justify-content: flex-start; /* Shift menu left */
+  justify-content: flex-start;
   align-items: center;
   padding: 20px 60px;
   position: fixed;
@@ -29,13 +29,7 @@ header {
   background: rgba(0,0,0,0.8);
   backdrop-filter: blur(8px);
   z-index: 10;
-}
-
-header h1 {
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-right: 50px;
+  flex-wrap: wrap; /* allows menu to wrap if screen is small */
 }
 
 nav a {
@@ -193,14 +187,14 @@ footer {
 <body>
 
 <header>
-  <h1>APARNA</h1>
-  <nav>
+  <h1>APARNA R.</h1>
+  <nav style="margin-left:auto;">
     <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
-
+  
 <div class="hero">
   <div>
     <h2>AI Storytelling</h2>
