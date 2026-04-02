@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aparna — Creative AI Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
 body, html { margin:0; padding:0; font-family:'Roboto',sans-serif; background:#0a0a0a; color:#fff; scroll-behavior:smooth;}
 header {display:flex; align-items:center; padding:20px 60px; position:fixed; width:100%; top:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:10;}
@@ -19,7 +19,7 @@ nav a:hover {background: linear-gradient(90deg,#ff9c9c,#ffe2b2); -webkit-backgro
 @keyframes float {0%{transform:translate(0,0) rotate(0deg);} 50%{transform:translate(30px,-20px) rotate(45deg);} 100%{transform:translate(-20px,30px) rotate(90deg);}}
 .hero .hero-text {max-width:600px; z-index:1; position:relative;}
 .hero h2 {font-size:48px; font-weight:400;}
-.hero p {margin-top:20px; color:#bbb; line-height:2; font-weight:400;}
+.hero p {margin-top:20px; color:#bbb; line-height:2; font-weight:400;} /* same style for all paragraphs */
 .hero a {display:inline-block; margin-top:30px; padding:12px 25px; background:linear-gradient(90deg,#ff9c9c,#ffe2b2); color:#0a0a0a; font-weight:500; text-decoration:none; border-radius:4px; transition:0.3s; position:relative;}
 .hero a:hover {opacity:0.85;}
 section {padding:100px 40px; max-width:1100px; margin:auto; opacity:0; transform:translateY(50px); transition:all 0.8s ease-out;}
@@ -34,19 +34,19 @@ h3 {font-size:26px; font-weight:400; margin-bottom:40px;}
 .card-title {font-size:14px; margin-bottom:5px;}
 .card-desc {font-size:12px; color:#888;}
 .about-line {height:1px; background:#333; margin:40px 0;}
-.about p {line-height:2; margin-bottom:20px; font-weight:400;}
-#contact {background:linear-gradient(135deg,#111,#1a1a1a); width:100%; padding:100px 60px;}
+.about p {line-height:2; margin-bottom:20px; font-weight:400;} /* same as hero paragraph */
+#contact {background:linear-gradient(135deg,#111,#1a1a1a); width:100%; padding:100px 60px; margin:0;} /* full width, no box */
 .contact-buttons {display:flex; flex-wrap:wrap; gap:20px; margin-top:30px;}
 .contact-buttons a {padding:15px 30px; text-decoration:none; font-weight:500; border-radius:4px; transition:0.3s;}
 .contact-buttons a.linkedin {background:linear-gradient(90deg,#ff9c9c,#ffe2b2); color:#0a0a0a;}
 .contact-buttons a.email {background:#fff; color:#0a0a0a;}
 .contact-buttons a:hover {opacity:0.85;}
-footer {border-top:1px solid #333; padding:20px 60px; font-size:10px; color:#666; text-align:right;}
+footer {border-top:1px solid #333; padding:20px 60px; font-size:9px; color:#666; text-align:right;} /* reduced font */
 </style>
 </head>
 <body>
 <header>
-  <h1>APARNA R.</h1>
+  <h1>APARNA</h1>
   <nav>
     <a href="#work">Work</a>
     <a href="#about">About</a>
@@ -91,7 +91,7 @@ footer {border-top:1px solid #333; padding:20px 60px; font-size:10px; color:#666
 
 <section id="about">
   <h3>About</h3>
-  <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative. My work explores the future of digital art and AI-enhanced expression.</p>
+  <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative. My work explores the future of digital art and AI-enhanced cinematic expression.</p>
   <p>From conceptual design to AI-powered films, I focus on transforming ideas into digital experiences that captivate and inspire. I continuously experiment with the boundaries of creativity and artificial intelligence, pushing the limits of digital innovation.</p>
   <div class="about-line"></div>
 </section>
