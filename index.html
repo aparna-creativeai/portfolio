@@ -6,7 +6,8 @@
 
 <title>Aparna — Creative AI Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Roboto Thin for body -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
 <style>
 /* RESET */
@@ -68,6 +69,7 @@ nav a:hover {
   background: linear-gradient(135deg, #1f1f1f 0%, #0a0a0a 100%);
 }
 
+/* subtle floating shapes */
 .hero::before, .hero::after {
   content: "";
   position: absolute;
@@ -108,20 +110,22 @@ nav a:hover {
   margin-top: 20px;
   color: #bbb;
   max-width: 600px;
-  line-height: 1.8;
+  line-height: 2;
   z-index: 1;
   position: relative;
+  font-weight: 100; /* Roboto Thin */
 }
 
+/* Hero button */
 .hero a {
   display: inline-block;
   margin-top: 30px;
   padding: 12px 25px;
-  background: linear-gradient(90deg, #ff9c9c, #ffe2b2); /* lighter gradient */
+  background: linear-gradient(90deg, #ff9c9c, #ffe2b2);
   color: #0a0a0a;
   font-weight: 500;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 4px; /* minimal curve */
   transition: 0.3s;
   z-index: 1;
   position: relative;
@@ -136,6 +140,14 @@ section {
   padding: 100px 40px;
   max-width: 1100px;
   margin: auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h3 {
@@ -154,7 +166,7 @@ h3 {
 /* CARD */
 .card {
   background: #111;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   transition: 0.3s;
 }
@@ -201,16 +213,16 @@ h3 {
 }
 
 .about p {
-  line-height: 1.8;
-  margin-bottom: 15px;
+  line-height: 2;
+  margin-bottom: 20px;
+  font-weight: 100; /* thin */
 }
 
-/* CONTACT */
+/* CONTACT FULL WIDTH */
 #contact {
   background: linear-gradient(135deg, #111, #1a1a1a);
-  border-radius: 10px;
-  padding: 80px 40px;
-  margin-top: 80px;
+  width: 100%;
+  padding: 100px 60px;
 }
 
 .contact-buttons {
@@ -224,12 +236,12 @@ h3 {
   padding: 15px 30px;
   text-decoration: none;
   font-weight: 500;
-  border-radius: 8px;
+  border-radius: 4px; /* minimal curve */
   transition: 0.3s;
 }
 
 .contact-buttons a.linkedin {
-  background: linear-gradient(90deg, #ff9c9c, #ffe2b2); /* lighter Hero gradient */
+  background: linear-gradient(90deg, #ff9c9c, #ffe2b2);
   color: #0a0a0a;
 }
 
@@ -245,18 +257,20 @@ h3 {
 /* FOOTER */
 footer {
   border-top: 1px solid #333;
-  padding: 20px 40px;
-  font-size: 12px;
+  padding: 20px 60px;
+  font-size: 10px; /* smaller */
   color: #666;
   text-align: right;
 }
+
+/* ANIMATION ON SCROLL */
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>APARNA</h1>
+  <h1>APARNA R.</h1>
   <nav>
     <a href="#work">Work</a>
     <a href="#about">About</a>
@@ -304,21 +318,35 @@ footer {
 <section id="about">
   <h3>About</h3>
   <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative. My work explores the future of digital art and AI-enhanced cinematic expression.</p>
-  <p>From conceptual design to AI-powered films, I focus on transforming ideas into digital experiences that captivate and inspire. I continuously experiment with the boundaries of creativity and artificial intelligence.</p>
+  <p>From conceptual design to AI-powered films, I focus on transforming ideas into digital experiences that captivate and inspire. I continuously experiment with the boundaries of creativity and artificial intelligence, pushing the limits of digital innovation.</p>
   <div class="about-line"></div>
 </section>
 
 <section id="contact">
   <h3>Contact</h3>
   <div class="contact-buttons">
-    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="linkedin">Connect on LinkedIn</a>
-    <a href="mailto:your@email.com" class="email">Email Me</a>
+    <a href="https://www.linkedin.com/in/aparna-r-56769910b/" target="_blank" class="linkedin">Connect on LinkedIn</a>
+    <a href="aparnashaa@gmail.com" class="email">Email Me</a>
   </div>
 </section>
 
 <footer>
   © Aparna — Creative AI Portfolio
 </footer>
+
+<script>
+// Scroll animations
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{threshold:0.1});
+
+sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
