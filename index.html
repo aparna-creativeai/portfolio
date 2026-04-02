@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aparna — AI Storytelling</title>
+<title>Aparna — AI Portfolio</title>
 
-<!-- Premium futuristic font -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -18,36 +17,31 @@ body {
   color: #fff;
 }
 
-/* NAVBAR */
+/* NAV */
 header {
   display: flex;
   justify-content: space-between;
-  padding: 25px 60px;
+  align-items: center;
+  padding: 20px 40px;
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(10,10,10,0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.8);
 }
 
 header h1 {
-  letter-spacing: 2px;
+  margin: 0;
+  font-size: 20px;
 }
 
 nav a {
-  margin-left: 30px;
+  margin-left: 20px;
   text-decoration: none;
   color: #aaa;
-  font-size: 14px;
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: #fff;
-  border-bottom: 1px solid #fff;
-}
-
-nav a:active {
   color: #fff;
 }
 
@@ -55,51 +49,39 @@ nav a:active {
 .hero {
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  padding-top: 60px;
 }
 
 .hero h2 {
-  font-size: 56px;
-  letter-spacing: 4px;
-}
-
-.hero p {
-  margin-top: 10px;
-  opacity: 0.6;
+  font-size: 48px;
 }
 
 /* SECTION */
 section {
-  padding: 120px 40px;
-  max-width: 1200px;
+  padding: 100px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
 h3 {
-  font-size: 28px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
-/* GRID (VERCEL STYLE) */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 20px;
 }
 
 /* CARD */
 .card {
   background: #111;
   padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  background: #1a1a1a;
+  border-radius: 10px;
 }
 
 /* VIDEO */
@@ -113,12 +95,13 @@ h3 {
   position: absolute;
   width: 100%;
   height: 100%;
+  border: none;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 60px;
+  padding: 40px;
   opacity: 0.5;
 }
 
@@ -139,48 +122,37 @@ footer {
 <div class="hero">
   <div>
     <h2>AI STORYTELLING</h2>
-    <p>Future of cinematic imagination</p>
+    <p>Future visual narratives</p>
   </div>
 </div>
 
-<!-- WORK SECTION -->
 <section id="work">
-  <h3>Selected Work</h3>
+  <h3>Work</h3>
 
   <div class="grid">
-
-    <!-- VIDEO CARD -->
     <div class="card">
       <div class="video">
         <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk" allowfullscreen></iframe>
       </div>
     </div>
 
-    <!-- EMPTY CARDS -->
     <div class="card">Coming Soon</div>
     <div class="card">Coming Soon</div>
-    <div class="card">Coming Soon</div>
-
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <h3>About</h3>
-  <p>
-    I create cinematic AI-driven visual storytelling blending emotion,
-    design and narrative into immersive digital experiences.
-  </p>
+  <p>I create AI-driven cinematic storytelling and experimental visual films.</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h3>Contact</h3>
   <p>Email: your@email.com</p>
 </section>
 
 <footer>
-  © Aparna — Creative AI Portfolio
+  © Aparna Portfolio
 </footer>
 
 </body>
