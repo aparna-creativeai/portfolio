@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aparna — Creative AI Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
 
@@ -46,7 +46,6 @@ linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
 background-size:60px 60px;
 z-index:0;
 mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 animation: moveSquares 60s linear infinite;
 }
 
@@ -55,7 +54,6 @@ animation: moveSquares 60s linear infinite;
 100%{background-position:1000px 1000px,1000px 1000px;}
 }
 
-/* Subtle gradient behind hero text */
 .hero-text-bg{
 position:absolute;
 inset:0;
@@ -72,9 +70,9 @@ opacity:0.08;
 100%{background-position:0% 50%;}
 }
 
-.hero-left{max-width:520px;z-index:2;position:relative;}
-.hero h2{font-size:72px;margin-bottom:20px;} /* reduced font size */
-.hero p{font-size:28px;color:#aaa;line-height:1.9;margin-bottom:30px;}
+.hero-left{max-width:560px;z-index:2;position:relative;}
+.hero h2{font-size:58px;margin-bottom:20px;}
+.hero p{font-size:18px;color:#aaa;line-height:1.8;margin-bottom:15px;}
 
 .hero-btn{
 padding:14px 28px;
@@ -83,8 +81,6 @@ color:#000;
 text-decoration:none;
 border-radius:6px;
 transition:0.3s, box-shadow 0.5s;
-position:relative;
-z-index:2;
 }
 .hero-btn:hover{
 filter:brightness(1.15);
@@ -92,10 +88,9 @@ box-shadow:0 6px 15px rgba(255,180,70,0.25);
 }
 
 /* SECTIONS */
-section{padding:120px 60px;position:relative;}
+section{padding:120px 60px;}
 
 /* WORK */
-#work{position:relative;}
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -107,7 +102,7 @@ border-radius:10px;
 overflow:hidden;
 border:1px solid rgba(255,255,255,0.06);
 position:relative;
-transition:transform 0.3s, box-shadow 0.3s;
+transition:0.3s;
 }
 
 .card::before{
@@ -117,23 +112,12 @@ inset:0;
 background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
 opacity:0.05;
 filter:blur(50px);
-transition:opacity 0.5s;
-animation: moveCardBG 80s linear infinite;
+transition:0.5s;
 }
 
-.card:hover::before{
-opacity:0.12;
-}
-
-@keyframes moveCardBG{
-0%{transform:translate(0,0);}
-50%{transform:translate(15px,15px);}
-100%{transform:translate(0,0);}
-}
-
+.card:hover::before{opacity:0.12;}
 .card:hover{
 transform:translateY(-4px);
-border-color:rgba(255,255,255,0.12);
 box-shadow:0 6px 15px rgba(255,180,70,0.12);
 }
 
@@ -145,21 +129,6 @@ box-shadow:0 6px 15px rgba(255,180,70,0.12);
 
 /* ABOUT */
 .about{overflow:hidden;}
-.about::before,
-.about::after{
-content:"";
-position:absolute;
-border:1px solid rgba(255,255,255,0.02);
-border-radius:50%;
-animation: drift 100s linear infinite;
-}
-.about::before{width:400px;height:400px;top:-100px;left:-100px;}
-.about::after{width:250px;height:250px;bottom:-50px;right:50px;}
-@keyframes drift{
-0%{transform:translate(0,0);}
-50%{transform:translate(30px,30px);}
-100%{transform:translate(0,0);}
-}
 .about span{
 position:absolute;
 border:1px solid rgba(255,255,255,0.02);
@@ -169,37 +138,32 @@ border-radius:50%;
 .circle2{width:150px;height:150px;bottom:20%;left:15%;}
 .circle3{width:300px;height:300px;top:40%;left:5%;}
 .circle4{width:120px;height:120px;bottom:10%;right:25%;}
+
 .about p{
-max-width:900px;
+max-width:850px;
 margin:auto;
 line-height:1.9;
 color:#aaa;
-margin-bottom:25px;
+margin-bottom:20px;
 text-align:center;
 }
 
-/* CONTACT */
+/* CONTACT FIXED */
 .contact{
-display:flex;
-justify-content:center;
-margin-top:0;
-}
-.contact-box{
 width:100%;
-max-width:1100px;
-padding:80px 40px;
+padding:120px 60px;
+background:#0a0a0a;
 text-align:center;
-position:relative;
-background:#111; /* single color background, no hover animation */
-border-radius:10px;
 }
-.contact-box h3{margin-bottom:30px;}
+
 .contact-buttons{
 display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
+margin-top:30px;
 }
+
 .contact-buttons a{
 width:220px;
 height:50px;
@@ -209,10 +173,11 @@ justify-content:center;
 border-radius:6px;
 text-decoration:none;
 font-size:14px;
-transition:0.3s, box-shadow 0.5s;
 background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
 color:#000;
+transition:0.3s;
 }
+
 .contact-buttons a:hover{
 filter:brightness(1.15);
 box-shadow:0 6px 15px rgba(255,180,70,0.25);
@@ -226,7 +191,7 @@ font-size:9px;
 color:#666;
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 .fade{
 opacity:0;
 transform:translateY(40px);
@@ -254,7 +219,13 @@ transform:translateY(0);
 <div class="hero-text-bg"></div>
 <div class="hero-left">
 <h2>AI Storytelling</h2>
+
 <p>I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.</p>
+
+<p>Blending artificial intelligence with cinematic thinking, I craft digital experiences that feel both emotional and futuristic.</p>
+
+<p>From concept to execution, every project is designed to push boundaries and explore new creative possibilities.</p>
+
 <a href="#contact" class="hero-btn">Get in Touch</a>
 </div>
 </div>
@@ -262,6 +233,7 @@ transform:translateY(0);
 <section id="work" class="fade">
 <h3>Work</h3>
 <div class="grid">
+
 <div class="card">
 <div class="video">
 <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk"></iframe>
@@ -285,6 +257,7 @@ transform:translateY(0);
 <div class="card-desc">Next Project</div>
 </div>
 </div>
+
 </div>
 </section>
 
@@ -293,19 +266,29 @@ transform:translateY(0);
 <span class="circle2"></span>
 <span class="circle3"></span>
 <span class="circle4"></span>
+
 <h3>About</h3>
+
 <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative.</p>
-<p>From conceptual design to AI-powered films, I transform ideas into compelling digital experiences and push the boundaries of digital creativity.</p>
+
+<p>My work explores how artificial intelligence can redefine the way stories are imagined and experienced, blending design, motion, and cinematic thinking.</p>
+
+<p>With a focus on innovation and aesthetics, I aim to create digital experiences that not only look premium but also feel meaningful and future-ready.</p>
+
 </section>
 
 <section id="contact" class="contact fade">
-<div class="contact-box">
+
 <h3>Contact</h3>
+
 <div class="contact-buttons">
-<a href="#" class="linkedin">LinkedIn</a>
-<a href="#" class="email">Email Me</a>
+<a href="https://www.linkedin.com/in/aparna-r-56769910b/" target="_blank">LinkedIn</a>
+
+<a href="mailto:aparnashaa@gmail.com?subject=Project%20Inquiry&body=Hi%20Aparna,%20I%20would%20like%20to%20connect%20with%20you.">
+Email Me
+</a>
 </div>
-</div>
+
 </section>
 
 <footer>
