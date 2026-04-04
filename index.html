@@ -47,7 +47,7 @@ position:relative;
 overflow:hidden;
 }
 
-/* GRID BACKGROUND */
+/* GRID FLOW CONTINUES */
 .hero::before{
 content:"";
 position:absolute;
@@ -58,25 +58,14 @@ linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
 background-size:50px 50px;
 z-index:0;
 
-/* fade out effect */
-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+-webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
 .hero-left{max-width:520px;z-index:2;}
 
-.hero h2{
-font-size:62px;
-font-weight:400;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-color:#aaa;
-line-height:1.8;
-margin-bottom:30px;
-}
+.hero h2{font-size:62px;margin-bottom:20px;}
+.hero p{font-size:18px;color:#aaa;line-height:1.8;margin-bottom:30px;}
 
 .hero-btn{
 padding:14px 28px;
@@ -92,10 +81,33 @@ section{padding:120px 60px;position:relative;}
 h3{font-size:24px;margin-bottom:40px;}
 
 /* WORK */
+#work{
+position:relative;
+}
+
+/* CONTINUE GRID INTO WORK */
+#work::before{
+content:"";
+position:absolute;
+top:-200px;
+left:0;
+width:100%;
+height:300px;
+background-image:
+linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+background-size:50px 50px;
+mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+-webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+z-index:0;
+}
+
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
+position:relative;
+z-index:2;
 }
 
 .card{
@@ -128,10 +140,7 @@ filter:blur(40px);
 .card-desc{font-size:12px;color:#888;}
 
 /* ABOUT */
-.about{
-width:100%;
-overflow:hidden;
-}
+.about{overflow:hidden;}
 
 .about::before,
 .about::after{
@@ -144,10 +153,7 @@ border-radius:50%;
 .about::before{width:400px;height:400px;top:-100px;left:-100px;}
 .about::after{width:250px;height:250px;bottom:-50px;right:50px;}
 
-.about span.circle1,
-.about span.circle2,
-.about span.circle3,
-.about span.circle4{
+.about span{
 position:absolute;
 border:1px solid rgba(255,255,255,0.05);
 border-radius:50%;
@@ -164,16 +170,35 @@ margin:auto;
 line-height:1.9;
 color:#aaa;
 margin-bottom:25px;
-font-size:15px;
-position:relative;
-z-index:2;
 }
 
-/* CONTACT (CLEAN) */
+/* CONTACT CARD STYLE */
 .contact{
-text-align:center;
-background:linear-gradient(180deg,#0a0a0a, rgba(255,156,156,0.03), rgba(255,226,178,0.03));
+display:flex;
+justify-content:center;
 }
+
+.contact-box{
+width:100%;
+max-width:1100px;
+background:#111;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.08);
+padding:80px 40px;
+text-align:center;
+position:relative;
+}
+
+.contact-box::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
+opacity:0.08;
+filter:blur(60px);
+}
+
+.contact-box h3{position:relative;z-index:2;}
 
 .contact-buttons{
 margin-top:30px;
@@ -181,6 +206,8 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
+position:relative;
+z-index:2;
 }
 
 .contact-buttons a{
@@ -293,10 +320,12 @@ transform:translateY(0);
 
 <!-- CONTACT -->
 <section id="contact" class="contact fade">
+<div class="contact-box">
 <h3>Contact</h3>
 <div class="contact-buttons">
 <a href="#" class="linkedin">LinkedIn</a>
 <a href="#" class="email">Email Me</a>
+</div>
 </div>
 </section>
 
