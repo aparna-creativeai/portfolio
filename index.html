@@ -57,18 +57,22 @@ linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
 background-size:50px 50px;
 z-index:0;
+
+/* fade out effect */
+mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+-webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .hero-left{max-width:520px;z-index:2;}
 
 .hero h2{
-font-size:62px; /* +10px */
+font-size:62px;
 font-weight:400;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:18px; /* +2px */
+font-size:18px;
 color:#aaa;
 line-height:1.8;
 margin-bottom:30px;
@@ -129,7 +133,6 @@ width:100%;
 overflow:hidden;
 }
 
-/* CIRCLES */
 .about::before,
 .about::after{
 content:"";
@@ -138,7 +141,6 @@ border:1px solid rgba(255,255,255,0.05);
 border-radius:50%;
 }
 
-/* 6 circles */
 .about::before{width:400px;height:400px;top:-100px;left:-100px;}
 .about::after{width:250px;height:250px;bottom:-50px;right:50px;}
 
@@ -167,32 +169,10 @@ position:relative;
 z-index:2;
 }
 
-/* CONTACT */
+/* CONTACT (CLEAN) */
 .contact{
-position:relative;
 text-align:center;
-overflow:hidden;
-}
-
-/* grid */
-.contact::before{
-content:"";
-position:absolute;
-inset:0;
-background-image:
-linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:40px 40px;
-}
-
-/* glow */
-.contact::after{
-content:"";
-position:absolute;
-bottom:0;
-width:100%;
-height:200px;
-background:linear-gradient(180deg,transparent,rgba(255,156,156,0.08),rgba(255,226,178,0.08));
+background:linear-gradient(180deg,#0a0a0a, rgba(255,156,156,0.03), rgba(255,226,178,0.03));
 }
 
 .contact-buttons{
@@ -201,8 +181,6 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-position:relative;
-z-index:2;
 }
 
 .contact-buttons a{
