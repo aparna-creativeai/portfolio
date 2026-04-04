@@ -34,9 +34,28 @@ align-items:center;
 padding:0 60px;
 position:relative;
 overflow:hidden;
-background:linear-gradient(135deg,#1f1f1f,#0a0a0a);
 }
 
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
+background-size:60px 60px;
+z-index:0;
+mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+-webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+animation: moveSquares 60s linear infinite;
+}
+
+@keyframes moveSquares{
+0%{background-position:0 0,0 0;}
+100%{background-position:1000px 1000px,1000px 1000px;}
+}
+
+/* Subtle gradient behind hero text */
 .hero-text-bg{
 position:absolute;
 inset:0;
@@ -54,8 +73,9 @@ opacity:0.08;
 }
 
 .hero-left{max-width:520px;z-index:2;position:relative;}
-.hero h2{font-size:72px;margin-bottom:20px;}
-.hero p{font-size:20px;color:#aaa;line-height:1.8;margin-bottom:30px;} 
+.hero h2{font-size:72px;margin-bottom:20px;} /* reduced font size */
+.hero p{font-size:28px;color:#aaa;line-height:1.9;margin-bottom:30px;}
+
 .hero-btn{
 padding:14px 28px;
 background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
@@ -89,6 +109,7 @@ border:1px solid rgba(255,255,255,0.06);
 position:relative;
 transition:transform 0.3s, box-shadow 0.3s;
 }
+
 .card::before{
 content:"";
 position:absolute;
@@ -99,17 +120,23 @@ filter:blur(50px);
 transition:opacity 0.5s;
 animation: moveCardBG 80s linear infinite;
 }
-.card:hover::before{opacity:0.12;}
+
+.card:hover::before{
+opacity:0.12;
+}
+
 @keyframes moveCardBG{
 0%{transform:translate(0,0);}
 50%{transform:translate(15px,15px);}
 100%{transform:translate(0,0);}
 }
+
 .card:hover{
 transform:translateY(-4px);
 border-color:rgba(255,255,255,0.12);
 box-shadow:0 6px 15px rgba(255,180,70,0.12);
 }
+
 .video{position:relative;padding-bottom:56.25%;}
 .video iframe{position:absolute;width:100%;height:100%;}
 .card-content{padding:16px;}
@@ -118,6 +145,30 @@ box-shadow:0 6px 15px rgba(255,180,70,0.12);
 
 /* ABOUT */
 .about{overflow:hidden;}
+.about::before,
+.about::after{
+content:"";
+position:absolute;
+border:1px solid rgba(255,255,255,0.02);
+border-radius:50%;
+animation: drift 100s linear infinite;
+}
+.about::before{width:400px;height:400px;top:-100px;left:-100px;}
+.about::after{width:250px;height:250px;bottom:-50px;right:50px;}
+@keyframes drift{
+0%{transform:translate(0,0);}
+50%{transform:translate(30px,30px);}
+100%{transform:translate(0,0);}
+}
+.about span{
+position:absolute;
+border:1px solid rgba(255,255,255,0.02);
+border-radius:50%;
+}
+.circle1{width:200px;height:200px;top:20%;right:10%;}
+.circle2{width:150px;height:150px;bottom:20%;left:15%;}
+.circle3{width:300px;height:300px;top:40%;left:5%;}
+.circle4{width:120px;height:120px;bottom:10%;right:25%;}
 .about p{
 max-width:900px;
 margin:auto;
@@ -139,7 +190,7 @@ max-width:1100px;
 padding:80px 40px;
 text-align:center;
 position:relative;
-background:#111; 
+background:#111; /* single color background, no hover animation */
 border-radius:10px;
 }
 .contact-box h3{margin-bottom:30px;}
@@ -213,7 +264,7 @@ transform:translateY(0);
 <div class="grid">
 <div class="card">
 <div class="video">
-<iframe src="https://www.youtube.com/embed/SvL8IVK2Njk" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/SvL8IVK2Njk"></iframe>
 </div>
 <div class="card-content">
 <div class="card-title">VELORÉ</div>
@@ -238,6 +289,10 @@ transform:translateY(0);
 </section>
 
 <section id="about" class="about fade">
+<span class="circle1"></span>
+<span class="circle2"></span>
+<span class="circle3"></span>
+<span class="circle4"></span>
 <h3>About</h3>
 <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative.</p>
 <p>From conceptual design to AI-powered films, I transform ideas into compelling digital experiences and push the boundaries of digital creativity.</p>
