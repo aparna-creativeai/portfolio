@@ -55,9 +55,25 @@ animation: moveSquares 60s linear infinite;
 100%{background-position:1000px 1000px,1000px 1000px;}
 }
 
-.hero-left{max-width:520px;z-index:2;position:relative;}
+/* Subtle gradient behind hero text */
+.hero-text-bg{
+position:absolute;
+inset:0;
+z-index:0;
+background:linear-gradient(135deg,#ff9c9c,#ffe2b2,#ffb347,#ffe2b2);
+background-size:400% 400%;
+animation: gradientAnim 30s ease infinite;
+opacity:0.08;
+}
 
-.hero h2{font-size:112px;margin-bottom:22px;}
+@keyframes gradientAnim{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.hero-left{max-width:520px;z-index:2;position:relative;}
+.hero h2{font-size:72px;margin-bottom:20px;} /* reduced font size */
 .hero p{font-size:28px;color:#aaa;line-height:1.9;margin-bottom:30px;}
 
 .hero-btn{
@@ -70,7 +86,6 @@ transition:0.3s, box-shadow 0.5s;
 position:relative;
 z-index:2;
 }
-
 .hero-btn:hover{
 filter:brightness(1.15);
 box-shadow:0 6px 15px rgba(255,180,70,0.25);
@@ -100,14 +115,14 @@ content:"";
 position:absolute;
 inset:0;
 background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
-opacity:0.06;
+opacity:0.05;
 filter:blur(50px);
 transition:opacity 0.5s;
 animation: moveCardBG 80s linear infinite;
 }
 
 .card:hover::before{
-opacity:0.18;
+opacity:0.12;
 }
 
 @keyframes moveCardBG{
@@ -119,7 +134,7 @@ opacity:0.18;
 .card:hover{
 transform:translateY(-4px);
 border-color:rgba(255,255,255,0.12);
-box-shadow:0 6px 15px rgba(255,180,70,0.15);
+box-shadow:0 6px 15px rgba(255,180,70,0.12);
 }
 
 .video{position:relative;padding-bottom:56.25%;}
@@ -236,6 +251,7 @@ transform:translateY(0);
 </header>
 
 <div class="hero">
+<div class="hero-text-bg"></div>
 <div class="hero-left">
 <h2>AI Storytelling</h2>
 <p>I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.</p>
