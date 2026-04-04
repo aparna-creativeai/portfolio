@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;}
@@ -47,7 +46,6 @@ position:relative;
 overflow:hidden;
 }
 
-/* SINGLE SOFT GRID */
 .hero::before{
 content:"";
 position:absolute;
@@ -57,16 +55,14 @@ linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
 background-size:60px 60px;
 z-index:0;
-
-/* smooth fade */
 mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 }
 
 .hero-left{max-width:520px;z-index:2;}
 
-.hero h2{font-size:62px;margin-bottom:20px;}
-.hero p{font-size:18px;color:#aaa;line-height:1.8;margin-bottom:30px;}
+.hero h2{font-size:72px;margin-bottom:20px;}
+.hero p{font-size:20px;color:#aaa;line-height:1.9;margin-bottom:30px;}
 
 .hero-btn{
 padding:14px 28px;
@@ -74,6 +70,12 @@ background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
 color:#000;
 text-decoration:none;
 border-radius:6px;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+opacity:1;
+filter:brightness(1.15);
 }
 
 /* SECTIONS */
@@ -100,7 +102,6 @@ transition:0.3s;
 position:relative;
 }
 
-/* SOFT GRADIENT ALWAYS ON */
 .card::before{
 content:"";
 position:absolute;
@@ -111,7 +112,6 @@ filter:blur(50px);
 transition:0.3s;
 }
 
-/* HOVER BRIGHTER */
 .card:hover::before{
 opacity:0.18;
 }
@@ -159,6 +159,7 @@ margin:auto;
 line-height:1.9;
 color:#aaa;
 margin-bottom:25px;
+text-align:center;
 }
 
 /* CONTACT */
@@ -178,7 +179,7 @@ text-align:center;
 position:relative;
 }
 
-/* SAME GRADIENT STYLE */
+/* Keep gradient but no hover effect */
 .contact-box::before{
 content:"";
 position:absolute;
@@ -186,10 +187,6 @@ inset:0;
 background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
 opacity:0.06;
 filter:blur(60px);
-}
-
-.contact-box:hover::before{
-opacity:0.15;
 }
 
 .contact-box h3{position:relative;z-index:2;}
@@ -213,6 +210,12 @@ justify-content:center;
 border-radius:6px;
 text-decoration:none;
 font-size:14px;
+transition:0.3s;
+}
+
+.contact-buttons a:hover{
+opacity:1;
+filter:brightness(1.15);
 }
 
 .linkedin{
@@ -229,7 +232,7 @@ color:#000;
 footer{
 text-align:right;
 padding:20px 60px;
-font-size:10px;
+font-size:9px;
 color:#666;
 }
 
@@ -244,7 +247,6 @@ transition:0.8s;
 opacity:1;
 transform:translateY(0);
 }
-
 </style>
 </head>
 
