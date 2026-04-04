@@ -75,6 +75,7 @@ opacity:0.08;
 .hero p{font-size:18px;color:#aaa;line-height:1.8;margin-bottom:15px;}
 
 .hero-btn{
+margin-top:15px; /* spacing fixed */
 padding:14px 28px;
 background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
 color:#000;
@@ -104,7 +105,6 @@ border:1px solid rgba(255,255,255,0.06);
 position:relative;
 transition:0.3s;
 }
-
 .card::before{
 content:"";
 position:absolute;
@@ -114,7 +114,6 @@ opacity:0.05;
 filter:blur(50px);
 transition:0.5s;
 }
-
 .card:hover::before{opacity:0.12;}
 .card:hover{
 transform:translateY(-4px);
@@ -128,33 +127,48 @@ box-shadow:0 6px 15px rgba(255,180,70,0.12);
 .card-desc{font-size:12px;color:#888;}
 
 /* ABOUT */
-.about{overflow:hidden;}
-.about span{
-position:absolute;
-border:1px solid rgba(255,255,255,0.02);
-border-radius:50%;
-}
-.circle1{width:200px;height:200px;top:20%;right:10%;}
-.circle2{width:150px;height:150px;bottom:20%;left:15%;}
-.circle3{width:300px;height:300px;top:40%;left:5%;}
-.circle4{width:120px;height:120px;bottom:10%;right:25%;}
-
-.about p{
-max-width:850px;
+.about{
+text-align:center;
+max-width:900px;
 margin:auto;
+}
+.about h3{
+margin-bottom:30px;
+}
+.about p{
 line-height:1.9;
 color:#aaa;
 margin-bottom:20px;
-text-align:center;
 }
 
-/* CONTACT FIXED */
+/* CONTACT */
 .contact{
-width:100%;
+display:flex;
+justify-content:center;
 padding:120px 60px;
-background:#0a0a0a;
-text-align:center;
 }
+
+.contact-box{
+width:100%;
+max-width:1100px;
+padding:80px 40px;
+text-align:center;
+border-radius:10px;
+background:#111;
+position:relative;
+}
+
+.contact-box::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
+opacity:0.06;
+filter:blur(60px);
+z-index:0;
+}
+
+.contact-box *{position:relative;z-index:2;}
 
 .contact-buttons{
 display:flex;
@@ -221,10 +235,8 @@ transform:translateY(0);
 <h2>AI Storytelling</h2>
 
 <p>I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.</p>
-
-<p>Blending artificial intelligence with cinematic thinking, I craft digital experiences that feel both emotional and futuristic.</p>
-
-<p>From concept to execution, every project is designed to push boundaries and explore new creative possibilities.</p>
+<p>Blending AI with cinematic storytelling to craft future-ready digital experiences.</p>
+<p>From concept to execution, I build work that inspires and pushes creative boundaries.</p>
 
 <a href="#contact" class="hero-btn">Get in Touch</a>
 </div>
@@ -262,31 +274,29 @@ transform:translateY(0);
 </section>
 
 <section id="about" class="about fade">
-<span class="circle1"></span>
-<span class="circle2"></span>
-<span class="circle3"></span>
-<span class="circle4"></span>
-
 <h3>About</h3>
 
 <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative.</p>
 
-<p>My work explores how artificial intelligence can redefine the way stories are imagined and experienced, blending design, motion, and cinematic thinking.</p>
+<p>My work explores how artificial intelligence can redefine storytelling by blending cinematic thinking with design and motion.</p>
 
-<p>With a focus on innovation and aesthetics, I aim to create digital experiences that not only look premium but also feel meaningful and future-ready.</p>
+<p>With a focus on innovation and aesthetics, I create digital experiences that feel premium, meaningful, and future-ready.</p>
 
 </section>
 
 <section id="contact" class="contact fade">
 
+<div class="contact-box">
 <h3>Contact</h3>
 
 <div class="contact-buttons">
 <a href="https://www.linkedin.com/in/aparna-r-56769910b/" target="_blank">LinkedIn</a>
 
-<a href="mailto:aparnashaa@gmail.com?subject=Project%20Inquiry&body=Hi%20Aparna,%20I%20would%20like%20to%20connect%20with%20you.">
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=aparnashaa@gmail.com" target="_blank">
 Email Me
 </a>
+</div>
+
 </div>
 
 </section>
