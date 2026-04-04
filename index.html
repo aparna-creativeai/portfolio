@@ -42,16 +42,37 @@ nav a:hover{color:#fff;}
 height:100vh;
 display:flex;
 align-items:center;
-justify-content:space-between;
 padding:0 60px;
 position:relative;
 overflow:hidden;
 }
 
+/* GRID BACKGROUND */
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:50px 50px;
+z-index:0;
+}
+
 .hero-left{max-width:520px;z-index:2;}
 
-.hero h2{font-size:52px;font-weight:400;margin-bottom:20px;}
-.hero p{color:#aaa;line-height:1.8;margin-bottom:30px;}
+.hero h2{
+font-size:62px; /* +10px */
+font-weight:400;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px; /* +2px */
+color:#aaa;
+line-height:1.8;
+margin-bottom:30px;
+}
 
 .hero-btn{
 padding:14px 28px;
@@ -61,31 +82,8 @@ text-decoration:none;
 border-radius:6px;
 }
 
-/* HERO LINE CIRCLES */
-.hero::before,
-.hero::after{
-content:"";
-position:absolute;
-border:1px solid rgba(255,255,255,0.05);
-border-radius:50%;
-}
-
-.hero::before{
-width:500px;
-height:500px;
-right:-100px;
-top:-50px;
-}
-
-.hero::after{
-width:300px;
-height:300px;
-right:100px;
-bottom:50px;
-}
-
 /* SECTIONS */
-section{padding:120px 60px;}
+section{padding:120px 60px;position:relative;}
 
 h3{font-size:24px;margin-bottom:40px;}
 
@@ -115,31 +113,48 @@ transition:0.3s;
 filter:blur(40px);
 }
 
-.card:hover::before{
-opacity:0.15;
-}
-
+.card:hover::before{opacity:0.15;}
 .card:hover{transform:translateY(-6px);}
 
-.video{
-position:relative;
-padding-bottom:56.25%;
-}
-
-.video iframe{
-position:absolute;
-width:100%;
-height:100%;
-}
+.video{position:relative;padding-bottom:56.25%;}
+.video iframe{position:absolute;width:100%;height:100%;}
 
 .card-content{padding:16px;}
 .card-title{font-size:14px;}
 .card-desc{font-size:12px;color:#888;}
 
-/* ABOUT FULL WIDTH */
+/* ABOUT */
 .about{
 width:100%;
+overflow:hidden;
 }
+
+/* CIRCLES */
+.about::before,
+.about::after{
+content:"";
+position:absolute;
+border:1px solid rgba(255,255,255,0.05);
+border-radius:50%;
+}
+
+/* 6 circles */
+.about::before{width:400px;height:400px;top:-100px;left:-100px;}
+.about::after{width:250px;height:250px;bottom:-50px;right:50px;}
+
+.about span.circle1,
+.about span.circle2,
+.about span.circle3,
+.about span.circle4{
+position:absolute;
+border:1px solid rgba(255,255,255,0.05);
+border-radius:50%;
+}
+
+.circle1{width:200px;height:200px;top:20%;right:10%;}
+.circle2{width:150px;height:150px;bottom:20%;left:15%;}
+.circle3{width:300px;height:300px;top:40%;left:5%;}
+.circle4{width:120px;height:120px;bottom:10%;right:25%;}
 
 .about p{
 max-width:900px;
@@ -148,16 +163,18 @@ line-height:1.9;
 color:#aaa;
 margin-bottom:25px;
 font-size:15px;
+position:relative;
+z-index:2;
 }
 
-/* CONTACT GRID BACKGROUND */
+/* CONTACT */
 .contact{
 position:relative;
 text-align:center;
 overflow:hidden;
 }
 
-/* grid lines */
+/* grid */
 .contact::before{
 content:"";
 position:absolute;
@@ -166,25 +183,16 @@ background-image:
 linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
 background-size:40px 40px;
-z-index:0;
 }
 
-/* bottom glow */
+/* glow */
 .contact::after{
 content:"";
 position:absolute;
 bottom:0;
-left:0;
 width:100%;
 height:200px;
-background:linear-gradient(180deg, transparent, rgba(255,156,156,0.08), rgba(255,226,178,0.08));
-z-index:0;
-}
-
-.contact h3,
-.contact-buttons{
-position:relative;
-z-index:2;
+background:linear-gradient(180deg,transparent,rgba(255,156,156,0.08),rgba(255,226,178,0.08));
 }
 
 .contact-buttons{
@@ -193,6 +201,8 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
+position:relative;
+z-index:2;
 }
 
 .contact-buttons a{
@@ -293,6 +303,11 @@ transform:translateY(0);
 
 <!-- ABOUT -->
 <section id="about" class="about fade">
+<span class="circle1"></span>
+<span class="circle2"></span>
+<span class="circle3"></span>
+<span class="circle4"></span>
+
 <h3>About</h3>
 <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative.</p>
 <p>From conceptual design to AI-powered films, I transform ideas into compelling digital experiences and push the boundaries of digital creativity.</p>
