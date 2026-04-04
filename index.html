@@ -10,199 +10,230 @@
 <style>
 
 /* RESET */
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body {
-  font-family:'Inter', sans-serif;
-  background:#0a0a0a;
-  color:#fff;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;}
 
 /* HEADER */
-header {
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:20px 60px;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
-  z-index:10;
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:10;
 }
 
-header h1 {
-  font-size:14px;
-  letter-spacing:2px;
+header h1{font-size:14px;letter-spacing:2px;}
+
+nav a{
+margin-left:30px;
+color:#888;
+text-decoration:none;
+transition:0.3s;
 }
 
-nav a {
-  margin-left:30px;
-  color:#aaa;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-nav a:hover {
-  color:#fff;
-}
+nav a:hover{color:#fff;}
 
 /* HERO */
-.hero {
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 60px;
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 60px;
+position:relative;
+overflow:hidden;
 }
 
-.hero-left {
-  max-width:520px;
+.hero-left{max-width:520px;z-index:2;}
+
+.hero h2{font-size:52px;font-weight:400;margin-bottom:20px;}
+.hero p{color:#aaa;line-height:1.8;margin-bottom:30px;}
+
+.hero-btn{
+padding:14px 28px;
+background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
+color:#000;
+text-decoration:none;
+border-radius:6px;
 }
 
-.hero h2 {
-  font-size:52px;
-  font-weight:400;
-  margin-bottom:20px;
+/* HERO LINE CIRCLES */
+.hero::before,
+.hero::after{
+content:"";
+position:absolute;
+border:1px solid rgba(255,255,255,0.05);
+border-radius:50%;
 }
 
-.hero p {
-  color:#aaa;
-  line-height:1.8;
-  margin-bottom:30px;
+.hero::before{
+width:500px;
+height:500px;
+right:-100px;
+top:-50px;
 }
 
-.hero-btn {
-  padding:14px 28px;
-  background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
-  color:#000;
-  text-decoration:none;
-  border-radius:6px;
-}
-
-/* subtle right visual */
-.hero-right {
-  width:400px;
-  height:400px;
-  border-radius:50%;
-  background: radial-gradient(circle, rgba(255,156,156,0.15), transparent 70%);
+.hero::after{
+width:300px;
+height:300px;
+right:100px;
+bottom:50px;
 }
 
 /* SECTIONS */
-section {
-  padding:120px 60px;
+section{padding:120px 60px;}
+
+h3{font-size:24px;margin-bottom:40px;}
+
+/* WORK */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
-h3 {
-  font-size:24px;
-  margin-bottom:40px;
+.card{
+background:#111;
+border-radius:10px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.3s;
+position:relative;
 }
 
-/* WORK GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
+.card::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
+opacity:0;
+transition:0.3s;
+filter:blur(40px);
 }
 
-.card {
-  background:#111;
-  border-radius:10px;
-  overflow:hidden;
-  transition:0.3s;
+.card:hover::before{
+opacity:0.15;
 }
 
-.card:hover {
-  transform:translateY(-6px);
+.card:hover{transform:translateY(-6px);}
+
+.video{
+position:relative;
+padding-bottom:56.25%;
 }
 
-.video {
-  position:relative;
-  padding-bottom:56.25%;
+.video iframe{
+position:absolute;
+width:100%;
+height:100%;
 }
 
-.video iframe {
-  position:absolute;
-  width:100%;
-  height:100%;
+.card-content{padding:16px;}
+.card-title{font-size:14px;}
+.card-desc{font-size:12px;color:#888;}
+
+/* ABOUT FULL WIDTH */
+.about{
+width:100%;
 }
 
-.card-content {
-  padding:16px;
+.about p{
+max-width:900px;
+margin:auto;
+line-height:1.9;
+color:#aaa;
+margin-bottom:25px;
+font-size:15px;
 }
 
-.card-title {
-  font-size:14px;
+/* CONTACT GRID BACKGROUND */
+.contact{
+position:relative;
+text-align:center;
+overflow:hidden;
 }
 
-.card-desc {
-  font-size:12px;
-  color:#888;
+/* grid lines */
+.contact::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:0;
 }
 
-/* ABOUT */
-.about p {
-  max-width:700px;
-  line-height:1.8;
-  color:#aaa;
-  margin-bottom:20px;
+/* bottom glow */
+.contact::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:200px;
+background:linear-gradient(180deg, transparent, rgba(255,156,156,0.08), rgba(255,226,178,0.08));
+z-index:0;
 }
 
-/* CONTACT */
-.contact {
-  text-align:center;
+.contact h3,
+.contact-buttons{
+position:relative;
+z-index:2;
 }
 
-.contact-buttons {
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
+.contact-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-.contact-buttons a {
-  width:220px;
-  height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:6px;
-  text-decoration:none;
-  font-size:14px;
+.contact-buttons a{
+width:220px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
 }
 
-.linkedin {
-  background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
-  color:#000;
+.linkedin{
+background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
+color:#000;
 }
 
-.email {
-  background:#fff;
-  color:#000;
+.email{
+background:#fff;
+color:#000;
 }
 
 /* FOOTER */
-footer {
-  text-align:right;
-  padding:20px 60px;
-  font-size:10px;
-  color:#666;
+footer{
+text-align:right;
+padding:20px 60px;
+font-size:10px;
+color:#666;
 }
 
-/* ANIMATION */
-.fade {
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.8s;
+/* SCROLL */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:0.8s;
 }
 
-.fade.show {
-  opacity:1;
-  transform:translateY(0);
+.fade.show{
+opacity:1;
+transform:translateY(0);
 }
 
 </style>
@@ -211,95 +242,83 @@ footer {
 <body>
 
 <header>
-  <h1>APARNA</h1>
-  <nav>
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<h1>APARNA</h1>
+<nav>
+<a href="#work">Work</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-left">
-    <h2>AI Storytelling</h2>
-    <p>
-      I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.
-    </p>
-    <a href="#contact" class="hero-btn">Get in Touch</a>
-  </div>
-
-  <div class="hero-right"></div>
+<div class="hero-left">
+<h2>AI Storytelling</h2>
+<p>I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.</p>
+<a href="#contact" class="hero-btn">Get in Touch</a>
+</div>
 </div>
 
 <!-- WORK -->
 <section id="work" class="fade">
-  <h3>Work</h3>
-  <div class="grid">
-    
-    <div class="card">
-      <div class="video">
-        <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk"></iframe>
-      </div>
-      <div class="card-content">
-        <div class="card-title">VELORÉ</div>
-        <div class="card-desc">AI Film</div>
-      </div>
-    </div>
+<h3>Work</h3>
+<div class="grid">
 
-    <div class="card">
-      <div class="card-content">
-        <div class="card-title">Coming Soon</div>
-        <div class="card-desc">Next Project</div>
-      </div>
-    </div>
+<div class="card">
+<div class="video">
+<iframe src="https://www.youtube.com/embed/SvL8IVK2Njk"></iframe>
+</div>
+<div class="card-content">
+<div class="card-title">VELORÉ</div>
+<div class="card-desc">AI Film</div>
+</div>
+</div>
 
-    <div class="card">
-      <div class="card-content">
-        <div class="card-title">Coming Soon</div>
-        <div class="card-desc">Next Project</div>
-      </div>
-    </div>
+<div class="card">
+<div class="card-content">
+<div class="card-title">Coming Soon</div>
+<div class="card-desc">Next Project</div>
+</div>
+</div>
 
-  </div>
+<div class="card">
+<div class="card-content">
+<div class="card-title">Coming Soon</div>
+<div class="card-desc">Next Project</div>
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="about fade">
-  <h3>About</h3>
-  <p>
-    I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative.
-  </p>
-  <p>
-    From conceptual design to AI-powered films, I transform ideas into compelling digital experiences.
-  </p>
+<h3>About</h3>
+<p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative.</p>
+<p>From conceptual design to AI-powered films, I transform ideas into compelling digital experiences and push the boundaries of digital creativity.</p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact fade">
-  <h3>Contact</h3>
-  <div class="contact-buttons">
-    <a href="#" class="linkedin">LinkedIn</a>
-    <a href="#" class="email">Email Me</a>
-  </div>
+<h3>Contact</h3>
+<div class="contact-buttons">
+<a href="#" class="linkedin">LinkedIn</a>
+<a href="#" class="email">Email Me</a>
+</div>
 </section>
 
 <footer>
-  © Aparna — Creative AI Portfolio
+© Aparna — Creative AI Portfolio
 </footer>
 
 <script>
-const items = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+const items=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('show');}
 });
-
-items.forEach(el => observer.observe(el));
+});
+items.forEach(el=>observer.observe(el));
 </script>
 
 </body>
