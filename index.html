@@ -4,326 +4,149 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aparna — Creative AI Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;}
+/* RESET & BASE */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Roboto', sans-serif; background:#0a0a0a; color:#fff; scroll-behavior:smooth;}
 
 /* HEADER */
-header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:20px 60px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:10;
-}
-header h1{font-size:16px;letter-spacing:2px;}
-nav a{margin-left:30px;color:#888;text-decoration:none;transition:0.3s;}
-nav a:hover{color:#ffb347;}
+header {position:fixed; top:0; width:100%; display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:10;}
+header h1 {font-size:18px; font-weight:500; letter-spacing:2px;}
+nav a {margin-left:30px; text-decoration:none; color:#888; font-weight:400; transition:0.3s;}
+nav a:hover {background:linear-gradient(90deg,#ff9c9c,#ffe2b2); -webkit-background-clip:text; color:transparent;}
 
 /* HERO */
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-padding:0 60px;
-position:relative;
-overflow:hidden;
-}
+.hero {height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 60px; background:#0a0a0a; position:relative;}
+.hero-text {max-width:700px;}
+.hero h2 {font-size:58px; font-weight:400; margin-bottom:20px;}
+.hero p {font-size:18px; font-weight:400; color:#bbb; line-height:2; margin-bottom:20px;}
+.hero a {padding:12px 25px; background:linear-gradient(90deg,#ff9c9c,#ffe2b2); color:#0a0a0a; text-decoration:none; font-weight:500; border-radius:4px; transition:0.3s;}
+.hero a:hover {opacity:0.85;}
 
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background-image:
-linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
-background-size:60px 60px;
-z-index:0;
-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
-animation: moveSquares 90s linear infinite;
-}
-
-@keyframes moveSquares{
-0%{background-position:0 0,0 0;}
-100%{background-position:1000px 1000px,1000px 1000px;}
-}
-
-/* Subtle gradient behind hero text */
-.hero-text-bg{
-position:absolute;
-inset:0;
-z-index:0;
-background:linear-gradient(135deg,#ff9c9c,#ffe2b2,#ffb347,#ffe2b2);
-background-size:400% 400%;
-animation: gradientAnim 30s ease infinite;
-opacity:0.08;
-}
-
-@keyframes gradientAnim{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-.hero-left{max-width:520px;z-index:2;position:relative;}
-.hero h2{font-size:62px;margin-bottom:20px;} /* reduced font size */
-.hero p{font-size:18px;color:#aaa;line-height:1.9;margin-bottom:30px;}
-
-.hero-btn{
-padding:14px 28px;
-background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
-color:#000;
-text-decoration:none;
-border-radius:6px;
-transition:0.3s, box-shadow 0.5s;
-position:relative;
-z-index:2;
-}
-.hero-btn:hover{
-filter:brightness(1.15);
-box-shadow:0 6px 15px rgba(255,180,70,0.25);
+/* HERO SQUARE PATTERN */
+.hero::before {
+  content:""; position:absolute; top:0; left:0; width:100%; height:100%; background-image: repeating-linear-gradient(0deg,rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px), repeating-linear-gradient(90deg,rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 20px);
+  z-index:0;
 }
 
 /* SECTIONS */
-section{padding:120px 60px;position:relative;}
+section {padding:100px 40px; max-width:1100px; margin:auto; position:relative;}
+h3 {font-size:26px; font-weight:400; margin-bottom:40px; text-align:center; color:#fff;}
 
-/* WORK */
-#work{position:relative;}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-.card{
-background:#111;
-border-radius:10px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,0.06);
-position:relative;
-transition:transform 0.3s, box-shadow 0.3s;
-}
-
-.card::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
-opacity:0.05;
-filter:blur(50px);
-transition:opacity 0.5s;
-animation: moveCardBG 80s linear infinite;
-}
-
-.card:hover::before{
-opacity:0.12;
-}
-
-@keyframes moveCardBG{
-0%{transform:translate(0,0);}
-50%{transform:translate(15px,15px);}
-100%{transform:translate(0,0);}
-}
-
-.card:hover{
-transform:translateY(-4px);
-border-color:rgba(255,255,255,0.12);
-box-shadow:0 6px 15px rgba(255,180,70,0.12);
-}
-
-.video{position:relative;padding-bottom:56.25%;}
-.video iframe{position:absolute;width:100%;height:100%;}
-.card-content{padding:16px;}
-.card-title{font-size:14px;}
-.card-desc{font-size:12px;color:#888;}
+/* WORK CARDS */
+.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
+.card {background:#111; border-radius:8px; overflow:hidden; transition:0.3s; border:1px solid rgba(255,255,255,0.05);}
+.card:hover {transform:translateY(-5px); box-shadow:0 4px 15px rgba(255,156,156,0.2);}
+.video {position:relative; padding-bottom:56.25%; height:0;}
+.video iframe {position:absolute; width:100%; height:100%; border:none;}
+.card-content {padding:15px;}
+.card-title {font-size:14px; font-weight:500; margin-bottom:5px;}
+.card-desc {font-size:12px; color:#888;}
 
 /* ABOUT */
-.about{overflow:hidden;}
-.about::before,
-.about::after{
-content:"";
-position:absolute;
-border:1px solid rgba(255,255,255,0.02);
-border-radius:50%;
-animation: drift 100s linear infinite;
-}
-.about::before{width:400px;height:400px;top:-100px;left:-100px;}
-.about::after{width:250px;height:250px;bottom:-50px;right:50px;}
-@keyframes drift{
-0%{transform:translate(0,0);}
-50%{transform:translate(30px,30px);}
-100%{transform:translate(0,0);}
-}
-.about span{
-position:absolute;
-border:1px solid rgba(255,255,255,0.02);
-border-radius:50%;
-}
-.circle1{width:200px;height:200px;top:20%;right:10%;}
-.circle2{width:150px;height:150px;bottom:20%;left:15%;}
-.circle3{width:300px;height:300px;top:40%;left:5%;}
-.circle4{width:120px;height:120px;bottom:10%;right:25%;}
-.about p{
-max-width:900px;
-margin:auto;
-line-height:1.9;
-color:#aaa;
-margin-bottom:25px;
-text-align:center;
-}
+.about p {line-height:2; margin-bottom:20px; font-weight:400; font-size:16px; color:#bbb; text-align:center;}
+.about-line {height:1px; background:#333; margin:40px 0;}
 
-/* CONTACT */
-.contact{
-display:flex;
-justify-content:center;
-margin-top:0;
+/* BACKGROUND CIRCLES IN ABOUT */
+.about::before, .about::after {
+  content:""; position:absolute; border-radius:50%; opacity:0.05; z-index:0;
 }
-.contact-box{
-width:100%;
-max-width:1100px;
-padding:80px 40px;
-text-align:center;
-position:relative;
-background:#111; /* single color background, no hover animation */
-border-radius:10px;
-}
-.contact-box h3{margin-bottom:30px;}
-.contact-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-.contact-buttons a{
-width:220px;
-height:50px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:6px;
-text-decoration:none;
-font-size:14px;
-transition:0.3s, box-shadow 0.5s;
-background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
-color:#000;
-}
-.contact-buttons a:hover{
-filter:brightness(1.15);
-box-shadow:0 6px 15px rgba(255,180,70,0.25);
-}
+.about::before {width:200px; height:200px; background:#fff; top:50px; left:50px;}
+.about::after {width:300px; height:300px; background:#fff; bottom:50px; right:50px;}
+
+/* CONTACT FULL WIDTH */
+#contact {background:#0a0a0a; width:100%; padding:100px 0; text-align:center; position:relative;}
+.contact-buttons {display:flex; justify-content:center; flex-wrap:wrap; gap:20px;}
+.contact-buttons a {padding:15px 30px; text-decoration:none; font-weight:500; border-radius:4px; transition:0.3s; display:inline-block;}
+.contact-buttons a.linkedin {background:linear-gradient(90deg,#ff9c9c,#ffe2b2); color:#0a0a0a;}
+.contact-buttons a.email {background:#ff9c9c; color:#0a0a0a;}
+.contact-buttons a:hover {opacity:0.85;}
 
 /* FOOTER */
-footer{
-text-align:right;
-padding:20px 60px;
-font-size:9px;
-color:#666;
-}
+footer {text-align:right; padding:20px 60px; font-size:9px; color:#666;}
 
 /* SCROLL ANIMATION */
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:0.8s;
-}
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
+section {opacity:0; transform:translateY(50px); transition:all 0.8s ease-out;}
+section.visible {opacity:1; transform:translateY(0);}
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>R.aparna</h1>
-<nav>
-<a href="#work">Work</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+  <h1>APARNA</h1>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <div class="hero">
-<div class="hero-text-bg"></div>
-<div class="hero-left">
-<h2>AI Storytelling</h2>
-<p>I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.</p>
-<p>My work combines the latest AI techniques with cinematic storytelling to craft unforgettable experiences.</p>
-<p>From concept to execution, I bring ideas to life in ways that engage, inspire, and push the boundaries of digital creativity.</p>
-<a href="#contact" class="hero-btn">Get in Touch</a>
-</div>
-</div>
-
-<section id="work" class="fade">
-<h3>Work</h3>
-<div class="grid">
-<div class="card">
-<div class="video">
-<iframe src="https://www.youtube.com/embed/SvL8IVK2Njk"></iframe>
-</div>
-<div class="card-content">
-<div class="card-title">VELORÉ</div>
-<div class="card-desc">AI Film</div>
-</div>
+  <div class="hero-text">
+    <h2>AI Storytelling</h2>
+    <p>I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.</p>
+    <p>My work combines the latest AI techniques with cinematic storytelling to craft unforgettable experiences.</p>
+    <p>From concept to execution, I bring ideas to life in ways that engage, inspire, and push the boundaries of digital creativity.</p>
+    <a href="#contact">Get in Touch</a>
+  </div>
 </div>
 
-<div class="card">
-<div class="card-content">
-<div class="card-title">Coming Soon</div>
-<div class="card-desc">Next Project</div>
-</div>
-</div>
-
-<div class="card">
-<div class="card-content">
-<div class="card-title">Coming Soon</div>
-<div class="card-desc">Next Project</div>
-</div>
-</div>
-</div>
+<section id="work">
+  <h3>Selected Work</h3>
+  <div class="grid">
+    <div class="card">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk" allowfullscreen></iframe>
+      </div>
+      <div class="card-content">
+        <div class="card-title">VELORÉ</div>
+        <div class="card-desc">AI Film • Luxury Concept</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-title">Coming Soon</div>
+        <div class="card-desc">Next AI Project</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-title">Coming Soon</div>
+        <div class="card-desc">Next AI Project</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="about" class="about fade">
-<span class="circle1"></span>
-<span class="circle2"></span>
-<span class="circle3"></span>
-<span class="circle4"></span>
-<h3>About</h3>
-<p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative.</p>
-<p>From conceptual design to AI-powered films, I transform ideas into compelling digital experiences and push the boundaries of digital creativity.</p>
-<p>With a passion for merging technology and artistry, I explore how AI can redefine visual storytelling. Each project is a journey into creativity, using intelligent algorithms and cinematic vision to create experiences that resonate emotionally and intellectually.</p>
-<p>By experimenting with new tools and methods, I aim to expand the boundaries of digital media and explore the future of immersive narratives, crafting work that is both innovative and visually captivating.</p>
+<section id="about" class="about">
+  <h3>About</h3>
+  <p>I specialize in AI-driven visual storytelling, crafting immersive experiences that merge technology, creativity, and narrative. My work explores the future of digital art and AI-enhanced cinematic expression.</p>
+  <p>With a passion for merging technology and artistry, I explore how AI can redefine visual storytelling. Each project is a journey into creativity, using intelligent algorithms and cinematic vision to create experiences that resonate emotionally and intellectually.</p>
+  <p>By experimenting with new tools and methods, I aim to expand the boundaries of digital media and explore the future of immersive narratives, crafting work that is both innovative and visually captivating.</p>
+  <div class="about-line"></div>
 </section>
 
-<section id="contact" class="contact fade">
-<div class="contact-box">
-<h3>Contact</h3>
-<div class="contact-buttons">
-<a href="https://www.linkedin.com/in/aparna-r-56769910b/" class="linkedin">LinkedIn</a>
-<a href="mailto:aparnashaa@gmail.com" class="email">Email Me</a>
-</div>
-</div>
+<section id="contact">
+  <h3>Contact</h3>
+  <div class="contact-buttons">
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="linkedin">Connect on LinkedIn</a>
+    <a href="mailto:aparna@example.com" class="email">Email Me</a>
+  </div>
 </section>
 
 <footer>
-© Aparna — Creative AI Portfolio
+  © Aparna — Creative AI Portfolio
 </footer>
 
 <script>
-const items=document.querySelectorAll('.fade');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add('show');}
-});
-});
-items.forEach(el=>observer.observe(el));
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+  });
+},{threshold:0.1});
+sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
