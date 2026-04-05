@@ -249,14 +249,17 @@ max-width:1200px;
 padding:120px 60px;
 border-top:1px solid rgba(255,255,255,0.05);
 border-bottom:1px solid rgba(255,255,255,0.05);
+display:flex;
+justify-content:center;
 }
 
 .stats-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:80px 40px;
-max-width:900px;
-margin:auto;
+gap:100px 80px;
+max-width:700px;
+width:100%;
+position:relative;
 }
 
 .stat h2{
@@ -271,6 +274,33 @@ color:#888;
 font-size:14px;
 line-height:1.6;
 letter-spacing:1px;
+}
+
+/* CROSS DIVIDER */
+.stats-grid::before,
+.stats-grid::after{
+content:"";
+position:absolute;
+background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+/* vertical line */
+.stats-grid::before{
+width:1px;
+height:100%;
+left:50%;
+top:0;
+transform:translateX(-50%);
+}
+
+/* horizontal line */
+.stats-grid::after{
+height:1px;
+width:100%;
+top:50%;
+left:0;
+transform:translateY(-50%);
+background:linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
 }
 
 </style>
@@ -305,7 +335,7 @@ letter-spacing:1px;
   <div class="stats-grid">
 
     <div class="stat">
-      <h2>8+</h2>
+      <h2>7+</h2>
       <p>YEARS IN CREATIVE<br>INDUSTRY</p>
     </div>
 
