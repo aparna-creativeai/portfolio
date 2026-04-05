@@ -45,8 +45,6 @@ linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
 background-size:60px 60px;
 z-index:0;
-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 animation: moveSquares 80s linear infinite;
 }
 
@@ -60,7 +58,6 @@ animation: moveSquares 80s linear infinite;
 position:absolute;
 inset:0;
 z-index:0;
-background:linear-gradient(135deg,#ff9c9c,#ffe2b2,#ffb347,#ffe2b2);
 background-size:400% 400%;
 animation: gradientAnim 30s ease infinite;
 opacity:0.08;
@@ -72,9 +69,9 @@ opacity:0.08;
 100%{background-position:0% 50%;}
 }
 
-.hero-left{max-width:560px;z-index:2;position:relative;}
-.hero h2{font-size:58px;margin-bottom:20px;}
-.hero p{font-size:16px;color:#aaa;line-height:1.5;margin-bottom:30px;}
+.hero-left{max-width:1000px;z-index:2;position:relative;}
+.hero h2{font-size:58px;margin-bottom:30px;}
+.hero p{font-size:16px;color:#aaa;line-height:1.5;margin-bottom:50px;}
 
 .hero-btn{
 margin-top:40px; /* ✅ FIXED spacing properly */
