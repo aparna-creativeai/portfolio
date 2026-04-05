@@ -241,7 +241,11 @@ transform:translateY(0);
 <div class="hero-text-bg"></div>
 <div class="hero-left">
 <h2>I create 
-  <span class="gradient-text"linear-gradient(90deg,#00C9D3,#00F2FF);><i>CiNEMATiC</i></span>
+  .gradient-text { 
+  background:linear-gradient(90deg,#00C9D3,#00F2FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transperant;}
+   <i>CiNEMATiC</i>}
   stories using AI </h2>
 
 <p>Exploring the future of Storytelling through Artificial Intelligence, visual experiments, and cinematic narratives. </p>
