@@ -131,13 +131,40 @@ box-shadow:0 6px 15px rgba(76,196,202,0.12);
 
 .video{position:relative;padding-bottom:56.25%;}
   
-.video iframe{
+.video{
+position:relative;
+padding-bottom:56.25%;
+overflow:hidden;
+}
+
+.video iframe,
+.video .thumb{
 position:absolute;
 width:100%;
 height:100%;
-pointer-events:none;
-opacity:0.7;
+object-fit:cover;
+top:0;
+left:0;
 transition:0.4s;
+}
+
+/* default = show thumbnail */
+.video iframe{
+opacity:0;
+pointer-events:none;
+}
+
+.video .thumb{
+opacity:1;
+}
+
+/* hover = show video */
+.card:hover .video iframe{
+opacity:1;
+}
+
+.card:hover .video .thumb{
+opacity:0;
 }
 
 .card:hover iframe{
@@ -272,7 +299,7 @@ max-width:1200px;
 <div class="hero">
 <div class="hero-text-bg"></div>
 <div class="hero-left">
-<h2>I create <i>CiNEMATiC</i>stories.. using AI </h2>
+<h2>I create <i>CiNEMATiC</i> stories.. using AI </h2>
 
 <p>Exploring the future of Storytelling through Artificial Intelligence, visual experiments, and cinematic narratives. </p>
 <p>Blending AI with cinematic storytelling to craft immersive and future-ready digital experiences, that merge design, creativity, and narrative.</p>
@@ -293,10 +320,18 @@ max-width:1200px;
 <div class="card">
 <div class="video">
   
-<iframe 
-src="https://www.youtube.com/embed/SvL8IVK2Njk?autoplay=0&mute=1&controls=0&loop=1&playlist=SvL8IVK2Njk"
-allow="autoplay"
-></iframe>
+<div class="video">
+
+  <!-- Thumbnail -->
+  <img src="https://img.youtube.com/vi/SvL8IVK2Njk/maxresdefault.jpg" class="thumb">
+
+  <!-- Video -->
+  <iframe 
+  src="https://www.youtube.com/embed/SvL8IVK2Njk?mute=1&controls=0&loop=1&playlist=SvL8IVK2Njk"
+  allow="autoplay"
+  ></iframe>
+
+</div>
   
 </div>
 <div class="card-content">
