@@ -45,6 +45,8 @@ linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
 linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
 background-size:60px 60px;
 z-index:0;
+mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+-webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
 animation: moveSquares 80s linear infinite;
 }
 
@@ -53,6 +55,7 @@ animation: moveSquares 80s linear infinite;
 100%{background-position:1000px 1000px,1000px 1000px;}
 }
 
+/* Subtle gradient behind hero text */
 .hero-text-bg{
 position:absolute;
 inset:0;
