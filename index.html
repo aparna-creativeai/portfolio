@@ -25,6 +25,18 @@ z-index:10;
 header h1{font-size:21px;letter-spacing:2px;}
 nav a{margin-left:30px;color:#888;text-decoration:none;transition:0.3s;}
 nav a:hover{color:#ffb347;}
+  
+.header::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,#ff9c9c,#ffe2b2);
+opacity:0.05;
+filter:blur(50px);
+transition:0.5s;
+  transform:translateY(-4px);
+box-shadow:0 6px 15px rgba(255,180,70,0.12);
+}
 
 /* HERO */
 .hero{
