@@ -99,13 +99,13 @@ box-shadow:0 6px 15px rgba(76,196,202,0.12);
 section{padding:120px 60px;}
 
 /* Concepts */
-
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 margin-top:50px;
 }
+  
 .card{
 background:#111;
 border-radius:10px;
@@ -114,6 +114,7 @@ border:1px solid rgba(255,255,255,0.06);
 position:relative;
 transition:0.3s;
 }
+  
 .card::before{
 content:"";
 position:absolute;
@@ -123,6 +124,7 @@ opacity:0.05;
 filter:blur(50px);
 transition:0.5s;
 }
+  
 .card:hover::before{opacity:0.12;}
 .card:hover{
 transform:translateY(-4px);
@@ -241,7 +243,36 @@ height:1px;
 background:linear-gradient(90deg,#888,transparent);
 max-width:1200px;
 }
-  
+
+/* STATS SECTION */
+.stats{
+padding:120px 60px;
+border-top:1px solid rgba(255,255,255,0.05);
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:80px 40px;
+max-width:900px;
+margin:auto;
+}
+
+.stat h2{
+color:#4fd1c5;
+font-size:42px;
+font-weight:400;
+margin-bottom:10px;
+}
+
+.stat p{
+color:#888;
+font-size:14px;
+line-height:1.6;
+letter-spacing:1px;
+}
+
 </style>
 </head>
 
@@ -269,6 +300,34 @@ max-width:1200px;
 </div>
 </div>
 
+<section class="stats fade">
+
+  <div class="stats-grid">
+
+    <div class="stat">
+      <h2>8+</h2>
+      <p>YEARS IN CREATIVE<br>INDUSTRY</p>
+    </div>
+
+    <div class="stat">
+      <h2>Transitioning</h2>
+      <p>INTO AI<br>STORYTELLING</p>
+    </div>
+
+    <div class="stat">
+      <h2>Exploring</h2>
+      <p>CINEMATIC AI<br>WORKFLOWS</p>
+    </div>
+
+    <div class="stat">
+      <h2>Building</h2>
+      <p>FIRST<br>EXPERIMENTAL PROJECTS</p>
+    </div>
+
+  </div>
+
+</section>
+  
 <section id="concepts" class="fade">
 <div class="concepts-title">
   <h3>Concepts</h3>
