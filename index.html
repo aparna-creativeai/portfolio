@@ -406,27 +406,28 @@ display:block;
 /* MOBILE MENU */
 @media (max-width:768px){
 
+/* SHOW HAMBURGER */
+.menu-toggle{
+display:block;
+}
+
 /* NAV MENU */
 .nav-menu{
 position:fixed;
-top:80px;
+top:0;
 right:-100%;
-width:260px;
-height:auto;
+width:70%;
+height:100vh;
 background:#0a0a0a;
 
 display:flex;
 flex-direction:column;
+justify-content:center;
 align-items:center;
-gap:20px;
+gap:30px;
 
-padding:30px 20px;
-border-radius:10px 0 0 10px;
-  
 transition:0.4s ease;
 z-index:90;
-
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 /* OPEN MENU (SLIDE IN) */
@@ -459,43 +460,6 @@ opacity:1;
 pointer-events:auto;
 }
 
-/* SHOW HAMBURGER */
-.menu-toggle{
-display:block;
-}
-
-}
-
-/* SINGLE CLEAN HAMBURGER (GLOBAL) */
-.menu-toggle{
-display:none;
-width:26px;
-height:20px;
-position:absolute;
-right:20px;
-top:20px;
-z-index:100;
-cursor:pointer;
-}
-
-/* hamburger lines */
-.menu-toggle span{
-display:block;
-height:2px;
-background:#fff;
-margin:5px 0;
-transition:0.3s;
-}
-
-/* animation to X */
-.menu-toggle.active span:nth-child(1){
-transform:rotate(45deg) translate(5px,5px);
-}
-.menu-toggle.active span:nth-child(2){
-opacity:0;
-}
-.menu-toggle.active span:nth-child(3){
-transform:rotate(-45deg) translate(6px,-6px);
 }
 
 </style>
