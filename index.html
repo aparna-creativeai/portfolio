@@ -385,12 +385,13 @@ justify-content:center;
 width:700px;
 height:600px;
 background:#000;
-innershadow:#888;
-border-radius:6px;
+border-radius:5%;
+box-shadow: inset 10px 10px 20px rgba(0,0,0,0.5), /* Inner shadow */
+              inset -10px -10px 20px rgba(255,255,255,0.5); /* Inner highlight */
 overflow:hidden;
 
 border:1px solid;
-border-image:linear-gradient(90deg,#d4af37,#fff,#d4af37) 1;
+border-image:linear-gradient(90deg,#00C9D3,#00F2FF)1;
 
 /* inner cinematic shadow */
 box-shadow:
