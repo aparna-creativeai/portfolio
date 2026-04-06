@@ -453,6 +453,51 @@ top:20px;
 }
 }
 
+/* MOBILE MENU STYLE */
+@media (max-width:768px){
+
+/* hide desktop nav */
+.nav-menu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0a0a0a;
+flex-direction:column;
+align-items:center;
+gap:20px;
+padding:20px 0;
+
+/* hidden by default */
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+}
+
+/* when active */
+.nav-menu.active{
+max-height:200px;
+}
+
+/* links style */
+.nav-menu a{
+margin:10px 0;
+font-size:16px;
+}
+
+/* hamburger */
+.menu-toggle{
+display:block;
+z-index:20;
+}
+
+/* hide original inline nav layout */
+header nav{
+display:flex;
+}
+
+}
+
 </style>
 </head>
 
@@ -460,8 +505,8 @@ top:20px;
 
 <header>
 <h1> <div class="menu-toggle">☰</div> R. aparna</h1>
-<nav>
-<a href="#concepts">Concepts</a>
+<nav class="nav-menu">
+<a href="#work">Concepts</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -634,6 +679,17 @@ Email Me
 </footer>
 
 <script>
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
+  const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav-menu');
+
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
 const items=document.querySelectorAll('.fade');
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
