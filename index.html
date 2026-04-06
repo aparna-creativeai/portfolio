@@ -30,6 +30,7 @@ nav a:hover{color:#00C9D3;}
   
 
 /* HERO */
+  @media (max-width:768px){
 .hero{
 height:100vh;
 display:flex;
@@ -37,6 +38,12 @@ align-items:center;
 padding:0 60px;
 position:relative;
 overflow:hidden;
+  
+flex-direction:column;
+justify-content:center;
+text-align:center;
+padding:100px 20px 40px;
+}
 }
 
 .hero::before{
@@ -390,12 +397,16 @@ overflow:hidden;
 }
   
 /* IMAGE */
+@media (max-width:768px){
 .image-frame img{
 width:100%;
 height:100%;
 padding:0.3px 0.3px;
 border-radius:24px;
 object-fit:cover;
+max-width:320px;
+margin:30px auto 0;
+}
 }
 
 /* HAMBURGER DEFAULT (HIDDEN ON DESKTOP) */
@@ -429,6 +440,8 @@ top:0;
 right:-100%;
 width:40%;
 height:70vh;
+padding:20px;
+border-radius:10px;
 background:#0a0a0a;
 
 display:flex;
@@ -436,7 +449,10 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 gap:30px;
-
+  
+/* SHADOW */
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  
 transition:0.4s ease;
 z-index:90;
 }
@@ -444,6 +460,7 @@ z-index:90;
 /* OPEN MENU (SLIDE IN) */
 .nav-menu.active{
 right:0;
+display:flex;
 }
 
 /* LINKS */
@@ -466,6 +483,10 @@ transition:0.3s;
 z-index:80;
 }
 
+.menu-toggle.active{
+color:#ffb347;
+}
+  
 .overlay.active{
 opacity:1;
 pointer-events:auto;
@@ -473,7 +494,29 @@ pointer-events:auto;
 
 }
 
+@media (max-width:768px){
 
+.hero h2{
+font-size:40px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+section h3{
+font-size:22px;
+}
+
+.about p{
+font-size:16px;
+}
+
+.nav-menu a{
+font-size:16px;
+}
+
+}
 </style>
 </head>
 
@@ -485,6 +528,7 @@ pointer-events:auto;
 <div class="menu-toggle">☰</div>
 
 <nav class="nav-menu">
+  
 <a href="#concepts">Concepts</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
@@ -686,6 +730,15 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     nav.classList.remove('active');
     overlay.classList.remove('active');
   });
+});
+
+// MOBILE MENU TOGGLE
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav-menu');
+
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+  toggle.classList.toggle('active');
 });
 
 </script>
