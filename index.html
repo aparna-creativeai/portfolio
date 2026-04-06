@@ -750,6 +750,17 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
   });
 });
 
+// SHOW BUTTON AFTER SCROLL
+const topBtn = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 300){
+    topBtn.classList.add('show');
+  } else {
+    topBtn.classList.remove('show');
+  }
+});
+  
 </script>
 
 </body>
