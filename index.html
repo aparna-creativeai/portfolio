@@ -398,6 +398,59 @@ border-radius:24px;
 object-fit:cover;
 }
 
+/* HERO RIGHT IMAGE */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* right container */
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+/* cinematic frame */
+.image-frame{
+width:420px;
+height:520px;
+border-radius:12px;
+overflow:hidden;
+position:relative;
+
+/* gradient border */
+border:1px solid transparent;
+background-image:
+linear-gradient(#0a0a0a,#0a0a0a),
+linear-gradient(120deg,#ff9c9c,#ffb347);
+
+background-origin:border-box;
+background-clip:padding-box, border-box;
+
+/* subtle glow */
+box-shadow:0 10px 40px rgba(255,180,70,0.08);
+}
+
+/* image */
+.image-frame img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* subtle motion */
+.image-frame{
+transition:0.4s;
+}
+.image-frame:hover{
+transform:translateY(-6px) scale(1.02);
+}
 
 </style>
 </head>
@@ -422,6 +475,7 @@ object-fit:cover;
     <img src="https://raw.githubusercontent.com/aparna-creativeai/portfolio/refs/heads/main/Haro_r-aparna.JPG" alt="Cinematic Shot">
   </div>
 </div>
+  
 </div>
   
 <h2 class="cinematic">
