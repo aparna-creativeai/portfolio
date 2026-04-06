@@ -384,8 +384,17 @@ justify-content:center;
 .image-frame{
 width:600px;
 height:500px;
+  
+border-radius:8px;
+overflow:hidden;
 
-  .shining-border {
+/* inner cinematic shadow */
+box-shadow:
+inset 10px 10px 60px rgba(0,0,0,0.7), /* Inner shadow */
+inset -10px -10px 120px rgba(255,255,255,0.5); /* Inner highlight */
+}
+
+.shining-border {
   position: relative;
   border: 4px solid transparent;
   /* Silver (left) -> Gold (middle) -> Silver (right) */
@@ -398,15 +407,6 @@ height:500px;
   background-origin: border-box;
   background-clip: padding-box, border-box;
   animation: shine 3s linear infinite;
-}
-  
-border-radius:8px;
-overflow:hidden;
-
-/* inner cinematic shadow */
-box-shadow:
-inset 10px 10px 60px rgba(0,0,0,0.7), /* Inner shadow */
-inset -10px -10px 120px rgba(255,255,255,0.5); /* Inner highlight */
 }
 
 /* IMAGE */
