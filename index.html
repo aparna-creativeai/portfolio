@@ -419,7 +419,13 @@ object-fit:cover;
 /* MOBILE FIX */
 @media (max-width:768px){
 .menu-toggle{
-display:block;
+display:none;
+font-size:24px;
+cursor:pointer;
+position:absolute;
+right:20px;
+top:18px;
+z-index:30;
 }
 .hero{
 flex-direction:column;
@@ -458,6 +464,7 @@ top:20px;
 
 /* hide desktop nav */
 .nav-menu{
+  transition:max-height 0.5s ease;
 position:absolute;
 top:70px;
 left:0;
@@ -476,7 +483,7 @@ transition:max-height 0.4s ease;
 
 /* when active */
 .nav-menu.active{
-max-height:200px;
+max-height:500px;
 }
 
 /* links style */
@@ -687,6 +694,17 @@ Email Me
 });
   const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-menu');
+  // toggle menu
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+// close when clicking links
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
 
 toggle.addEventListener('click', () => {
   nav.classList.toggle('active');
