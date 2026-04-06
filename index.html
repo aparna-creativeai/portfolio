@@ -359,13 +359,92 @@ line-height:1.1;
 letter-spacing:-1px;
 }
 
+/* CLEAN HERO LAYOUT */
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 60px;
+gap:60px;
+}
+
+/* LEFT TEXT */
+.hero-left{
+max-width:520px;
+}
+
+/* RIGHT IMAGE */
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+/* CINEMATIC FRAME */
+.image-frame{
+width:500px;
+height:600px;
+background:#000;
+border-radius:6px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.2);
+
+/* inner cinematic shadow */
+box-shadow:
+inset 0 0 60px rgba(0,0,0,0.7),
+inset 0 0 120px rgba(0,0,0,0.6);
+}
+
+/* IMAGE */
+.image-frame img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* MOBILE FIX */
+@media (max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero-right{
+margin-top:40px;
+}
+
+.image-frame{
+width:100%;
+max-width:320px;
+height:420px;
+margin:auto;
+}
+
+/* SIMPLE MENU FIX */
+nav{
+display:none;
+}
+
+.menu-toggle{
+display:block;
+font-size:24px;
+cursor:pointer;
+position:absolute;
+right:20px;
+top:20px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>R. aparna</h1>
+<h1> <div class="menu-toggle">☰</div> R. aparna</h1>
 <nav>
 <a href="#concepts">Concepts</a>
 <a href="#about">About</a>
@@ -374,20 +453,30 @@ letter-spacing:-1px;
 </header>
 
 <div class="hero">
-<div class="hero-text-bg"></div>
-<div class="hero-left">
-<h2 class="cinematic">
-  <span class="light-text">I create </span> <span class="gradient-text" class="bold-text"><i>CiNEMATiC</i></span><br> 
-  <span class="light-text"> stories... using AI </span>
-</h2>
 
-<span class="medium-text">
-<p>Exploring the future of Storytelling through Artificial Intelligence, visual experiments, and cinematic narratives. </p>
-<p>Blending AI with cinematic storytelling to craft immersive and future-ready digital experiences, that merge design, creativity, and narrative.</p>
-<p>From concept to execution, I build work that inspires and pushes creative boundaries.</p></span>
-  
-<a href="#contact" class="hero-btn">Get in Touch</a>
-</div>
+  <div class="hero-left">
+    <h2>
+      <span style="font-weight:500;">AI</span>
+      <span style="font-weight:300;">Storytelling</span>
+    </h2>
+
+    <p>
+      I create intelligent AI-driven visual experiences that merge design, creativity, and narrative into immersive digital projects.
+    </p>
+
+    <p>
+      From concept to execution, I build work that inspires and pushes creative boundaries.
+    </p>
+
+    <a href="#contact" class="hero-btn">Get in Touch</a>
+  </div>
+
+  <div class="hero-right">
+    <div class="image-frame">
+      <img src="https://raw.githubusercontent.com/aparna-creativeai/portfolio/refs/heads/main/Haro_r-aparna.JPG">
+    </div>
+  </div>
+
 </div>
 
 <section class="stats fade">
