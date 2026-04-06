@@ -24,8 +24,7 @@ transform:translateY(-4px);
 box-shadow:0 6px 15px rgba(137,184,186,0.10);
 z-index:10;
 }
-header h1 <div class="menu-toggle">☰</div>
-{font-size:21px;letter-spacing:2px;}
+header h1{font-size:21px;letter-spacing:2px;}
 nav a{margin-left:30px;color:#888;text-decoration:none;transition:0.3s;}
 nav a:hover{color:#00C9D3;}
   
@@ -360,93 +359,6 @@ line-height:1.1;
 letter-spacing:-1px;
 }
 
-/* HERO RIGHT IMAGE */
-.hero{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-/* right container */
-.hero-right{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-position:relative;
-z-index:2;
-}
-
-/* cinematic frame */
-.image-frame{
-width:520px;
-height:620px;
-border-radius:6px;
-overflow:hidden;
-position:relative;
-
-/* no background */
-background:#000;
-
-/* premium metallic border */
-border:1px solid rgba(255,255,255,0.2);
-
-/* inner shadow (cinematic frame feel) */
-box-shadow:
-inset 0 0 40px rgba(0,0,0,0.7),
-inset 0 0 80px rgba(0,0,0,0.6);
-
-/* remove hover interaction */
-transition:none;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width:768px){
-
-/* HERO STACK */
-.hero{
-flex-direction:column;
-padding:120px 20px 60px;
-text-align:center;
-}
-
-/* TEXT CENTER */
-.hero-left{
-max-width:100%;
-}
-
-/* IMAGE BELOW TEXT */
-.hero-right{
-margin-top:40px;
-}
-
-/* FIX IMAGE SIZE */
-.image-frame{
-width:100%;
-max-width:320px;
-height:420px;
-margin:auto;
-}
-
-/* NAV (for future hamburger) */
-nav{
-display:none;
-}
-
-}
-
-.menu-toggle{
-display:none;
-font-size:22px;
-cursor:pointer;
-}
-
-@media (max-width:768px){
-.menu-toggle{
-display:block;
-}
-}
-
 </style>
 </head>
 
@@ -475,11 +387,6 @@ display:block;
 <p>From concept to execution, I build work that inspires and pushes creative boundaries.</p></span>
   
 <a href="#contact" class="hero-btn">Get in Touch</a>
-</div>
-  <div class="hero-right">
-  <div class="image-frame">
-    <img src="https://raw.githubusercontent.com/aparna-creativeai/portfolio/refs/heads/main/Haro_r-aparna.JPG" alt="Cinematic Shot">
-  </div>
 </div>
 </div>
 
