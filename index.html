@@ -688,11 +688,6 @@ Email Me
 </footer>
 
 <script>
-  document.querySelectorAll('.nav-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('active');
-  });
-});
   const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-menu');
   // toggle menu
@@ -707,9 +702,6 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
   });
 });
 
-toggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
 const items=document.querySelectorAll('.fade');
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
