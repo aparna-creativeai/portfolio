@@ -401,12 +401,17 @@ object-fit:cover;
 /* MOBILE MENU */
 @media (max-width:768px){
 
+/* SHOW HAMBURGER */
+.menu-toggle{
+display:block;
+}
+
 /* NAV MENU */
 .nav-menu{
 position:fixed;
 top:80px;
 right:-100%;
-width:260px;   /* clean compact size */
+width:260px;
 height:auto;
 background:#0a0a0a;
 
@@ -417,14 +422,14 @@ gap:20px;
 
 padding:30px 20px;
 border-radius:10px 0 0 10px;
-
+  
 transition:0.4s ease;
 z-index:90;
 
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* OPEN MENU */
+/* OPEN MENU (SLIDE IN) */
 .nav-menu.active{
 right:0;
 }
@@ -435,7 +440,7 @@ font-size:18px;
 color:#fff;
 }
 
-/* OVERLAY */
+/* OPTIONAL OVERLAY CLICK AREA */
 .overlay{
 position:fixed;
 top:0;
@@ -460,7 +465,6 @@ display:block;
 }
 
 }
-
 
 /* SINGLE CLEAN HAMBURGER (GLOBAL) */
 .menu-toggle{
