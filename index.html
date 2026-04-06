@@ -385,7 +385,7 @@ justify-content:center;
 width:650px;
 height:550px;
 border-radius:16px;
-  background:linear-gradient(120deg,#FFCC31,#F7F7F7,#FFC000);
+  background:linear-gradient(120deg,#FFCC31,#FFCC31,#F7F7F7,#FFCC31);
 overflow:hidden;
 }
 
@@ -451,7 +451,27 @@ top:20px;
 display:block;
 }
 
-/* HIDE DESKTOP MENU */
+/* HAMBURGER DEFAULT (HIDDEN ON DESKTOP) */
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+position:absolute;
+right:20px;
+top:18px;
+z-index:50;
+color:#fff;
+}
+
+/* MOBILE MENU */
+@media (max-width:768px){
+
+/* SHOW HAMBURGER */
+.menu-toggle{
+display:block;
+}
+
+/* NAV MENU */
 .nav-menu{
 position:absolute;
 top:70px;
@@ -460,60 +480,25 @@ width:100%;
 background:#0a0a0a;
 
 display:flex;
-flex-direction:column;
-align-items:center;
-
-max-height:0;
-overflow:hidden;
-transition:max-height 0.4s ease;
-}
-
-/* WHEN OPEN */
-.nav-menu.active{
-max-height:500px;
-}
-
-}
-
-/* hide desktop nav */
-.nav-menu{
-  transition:max-height 0.5s ease;
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-background:#0a0a0a;
 flex-direction:column;
 align-items:center;
 gap:20px;
 padding:20px 0;
 
-/* hidden by default */
 max-height:0;
 overflow:hidden;
 transition:max-height 0.4s ease;
 }
 
-/* when active */
+/* OPEN MENU */
 .nav-menu.active{
 max-height:500px;
 }
 
-/* links style */
+/* LINKS */
 .nav-menu a{
 margin:10px 0;
 font-size:16px;
-}
-
-/* hamburger */
-.menu-toggle{
-display:block;
-z-index:20;
-}
-
-/* hide original inline nav layout */
-header nav{
-display:flex;
 }
 
 }
@@ -524,10 +509,12 @@ display:flex;
 <body>
 
 <header>
-<h1> R. aparna</h1>
-  <div class="menu-toggle">☰</div>
+<h1>APARNA</h1>
+
+<div class="menu-toggle">☰</div>
+
 <nav class="nav-menu">
-<a href="#work">Concepts</a>
+<a href="#work">Work</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -730,6 +717,20 @@ if(entry.isIntersecting){entry.target.classList.add('show');}
 });
 });
 items.forEach(el=>observer.observe(el));
+
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav-menu');
+
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+  });
+});
+  
 </script>
 
 </body>
