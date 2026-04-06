@@ -473,7 +473,31 @@ pointer-events:auto;
 
 }
 
+.scroll-down{
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+font-size:12px;
+color:#888;
+text-decoration:none;
+letter-spacing:2px;
+}
 
+.scroll-down:hover{
+color:#ffb347;
+}
+
+.scroll-down{
+animation:fadeMove 2s infinite;
+}
+
+@keyframes fadeMove{
+0%{opacity:0; transform:translate(-50%,10px);}
+50%{opacity:1; transform:translate(-50%,0);}
+100%{opacity:0; transform:translate(-50%,10px);}
+}
+  
 </style>
 </head>
 
@@ -495,6 +519,7 @@ pointer-events:auto;
   
 <div class="hero">
 <div class="hero-text-bg"></div>
+  
 <div class="hero-left">
 <h2 class="cinematic">
   <span class="light-text">I create </span> <span class="gradient-text" class="bold-text"><i>CiNEMATiC</i></span><br> 
@@ -507,7 +532,11 @@ pointer-events:auto;
 <p>From concept to execution, I build work that inspires and pushes creative boundaries.</p></span>
   
 <a href="#contact" class="hero-btn">Get in Touch</a>
+
+<a href="#work" class="scroll-down">Scroll ↓</a>
+  
 </div>
+  
 <div class="hero-right">
   <div class="image-frame">
     <img src="https://raw.githubusercontent.com/aparna-creativeai/portfolio/refs/heads/main/Haro_r-aparna.JPG" alt="Cinematic Shot">
