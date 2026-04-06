@@ -27,7 +27,13 @@ z-index:10;
 header h1{font-size:21px;letter-spacing:2px;}
 nav a{margin-left:30px;color:#888;text-decoration:none;transition:0.3s;}
 nav a:hover{color:#00C9D3;}
-  
+
+/* DEFAULT NAV (DESKTOP) */
+.nav-menu{
+display:flex;
+gap:30px;
+align-items:center;
+}
 
 /* HERO */
 .hero{
@@ -399,29 +405,35 @@ object-fit:cover;
 }
   
 
-/* MOBILE MENU */
 @media (max-width:768px){
 
-/* NAV MENU */
+/* SHOW HAMBURGER */
+.menu-toggle{
+display:block;
+}
+
+/* HIDE NORMAL NAV */
 .nav-menu{
 position:fixed;
-top:0;
+top:80px;
 right:-100%;
-width:50%;
-height:40vh;
+width:260px;
 background:#0a0a0a;
 
-display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:center;
 gap:20px;
 
+padding:30px 20px;
+border-radius:10px 0 0 10px;
+
 transition:0.4s ease;
-z-index:90;
+z-index:150;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* OPEN MENU (SLIDE IN) */
+/* OPEN MENU */
 .nav-menu.active{
 right:0;
 }
@@ -429,10 +441,9 @@ right:0;
 /* LINKS */
 .nav-menu a{
 font-size:18px;
-color:#fff;
 }
 
-/* OPTIONAL OVERLAY CLICK AREA */
+/* OVERLAY */
 .overlay{
 position:fixed;
 top:0;
@@ -443,7 +454,7 @@ background:rgba(0,0,0,0.5);
 opacity:0;
 pointer-events:none;
 transition:0.3s;
-z-index:80;
+z-index:140;
 }
 
 .overlay.active{
@@ -461,15 +472,20 @@ pointer-events:auto;
 <header>
 <h1>R. aparna</h1>
 
-<div class="menu-toggle">☰</div>
+<div class="menu-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
 <nav class="nav-menu">
 <a href="#concepts">Concepts</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
-</nav>
+</nav> 
 </header>
-  
+
+
 <div class="overlay"></div>
   
 <div class="hero">
