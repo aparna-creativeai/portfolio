@@ -414,17 +414,25 @@ color:#fff;
 @media (max-width:768px){
 
 /* SHOW HAMBURGER */
-.menu-toggle{
-display:block;
+
+
+/* Target the bars inside your menu toggle */
+.menu-toggle span {
+  width: 40px;      /* Increased from standard 20-30px */
+  height: 4px;     /* Increased thickness */
+  margin: 8px 0;   /* Increased spacing between bars */
+  display: block;
+  background: #000;
 }
+
 
 /* NAV MENU */
 .nav-menu{
 position:fixed;
 top:0;
 right:-100%;
-width:60%;
-height:70vh;
+width:50%;
+height:60vh;
 background:#0a0a0a;
 
 display:flex;
@@ -444,7 +452,7 @@ right:0;
 
 /* LINKS */
 .nav-menu a{
-font-size:24px;
+font-size:28px;
 color:#fff;
 }
 
