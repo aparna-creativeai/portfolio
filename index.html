@@ -407,7 +407,9 @@ object-fit:cover;
 
 /* MOBILE FIX */
 @media (max-width:768px){
-
+.menu-toggle{
+display:block;
+}
 .hero{
 flex-direction:column;
 text-align:center;
@@ -431,14 +433,13 @@ display:none;
 }
 
 .menu-toggle{
-display:block;
+display:none; /* hide by default */
 font-size:24px;
 cursor:pointer;
 position:absolute;
 right:20px;
 top:20px;
 }
-
 }
 
 </style>
