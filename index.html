@@ -359,6 +359,46 @@ line-height:1.1;
 letter-spacing:-1px;
 }
 
+/* CLEAN HERO LAYOUT */
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 60px;
+gap:60px;
+}
+
+/* LEFT TEXT */
+.hero-left{
+max-width:520px;
+}
+
+/* RIGHT IMAGE */
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+/* CINEMATIC FRAME */
+.image-frame{
+width:650px;
+height:550px;
+border-radius:24px;
+  background:linear-gradient(120deg,#FFCC31,#FFCC31,#F7F7F7,#FFCC31);
+overflow:hidden;
+}
+
+/* IMAGE */
+.image-frame img{
+width:100%;
+height:100%;
+padding:0.3px 0.3px;
+border-radius:24px;
+object-fit:cover;
+}
+
+
 </style>
 </head>
 
@@ -376,6 +416,13 @@ letter-spacing:-1px;
 <div class="hero">
 <div class="hero-text-bg"></div>
 <div class="hero-left">
+
+<div class="hero-right">
+  <div class="image-frame">
+    <img src="https://raw.githubusercontent.com/aparna-creativeai/portfolio/refs/heads/main/Haro_r-aparna.JPG" alt="Cinematic Shot">
+  </div>
+</div>
+  
 <h2 class="cinematic">
   <span class="light-text">I create </span> <span class="gradient-text" class="bold-text"><i>CiNEMATiC</i></span><br> 
   <span class="light-text"> stories... using AI </span>
