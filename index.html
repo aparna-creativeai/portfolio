@@ -406,12 +406,13 @@ object-fit:cover;
 @media (max-width:768px){
 .menu-toggle{
 display:none;
-font-size:24px;
+font-size:26px;
 cursor:pointer;
 position:absolute;
 right:20px;
 top:18px;
-z-index:30;
+z-index:50;
+color:#fff;
 }
 .hero{
 flex-direction:column;
@@ -447,6 +448,35 @@ top:20px;
 
 /* MOBILE MENU STYLE */
 @media (max-width:768px){
+
+/* SHOW HAMBURGER */
+.menu-toggle{
+display:block;
+}
+
+/* HIDE DESKTOP MENU */
+.nav-menu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0a0a0a;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+}
+
+/* WHEN OPEN */
+.nav-menu.active{
+max-height:500px;
+}
+
+}
 
 /* hide desktop nav */
 .nav-menu{
@@ -498,6 +528,7 @@ display:flex;
 
 <header>
 <h1> R. aparna</h1>
+  <div class="menu-toggle">☰</div>
 <nav class="nav-menu">
 <a href="#work">Concepts</a>
 <a href="#about">About</a>
