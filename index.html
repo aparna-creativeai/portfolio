@@ -24,7 +24,8 @@ transform:translateY(-4px);
 box-shadow:0 6px 15px rgba(137,184,186,0.10);
 z-index:10;
 }
-header h1{font-size:21px;letter-spacing:2px;}
+header h1 <div class="menu-toggle">☰</div>
+{font-size:21px;letter-spacing:2px;}
 nav a{margin-left:30px;color:#888;text-decoration:none;transition:0.3s;}
 nav a:hover{color:#00C9D3;}
   
@@ -397,6 +398,53 @@ inset 0 0 80px rgba(0,0,0,0.6);
 
 /* remove hover interaction */
 transition:none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width:768px){
+
+/* HERO STACK */
+.hero{
+flex-direction:column;
+padding:120px 20px 60px;
+text-align:center;
+}
+
+/* TEXT CENTER */
+.hero-left{
+max-width:100%;
+}
+
+/* IMAGE BELOW TEXT */
+.hero-right{
+margin-top:40px;
+}
+
+/* FIX IMAGE SIZE */
+.image-frame{
+width:100%;
+max-width:320px;
+height:420px;
+margin:auto;
+}
+
+/* NAV (for future hamburger) */
+nav{
+display:none;
+}
+
+}
+
+.menu-toggle{
+display:none;
+font-size:22px;
+cursor:pointer;
+}
+
+@media (max-width:768px){
+.menu-toggle{
+display:block;
+}
 }
 
 </style>
