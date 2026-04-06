@@ -360,6 +360,9 @@ letter-spacing:-1px;
 }
   
 /* CLEAN HERO LAYOUT */
+
+
+  
 .hero{
 display:flex;
 align-items:center;
@@ -397,6 +400,59 @@ padding:0.3px 0.3px;
 border-radius:24px;
 object-fit:cover;
 }
+
+/* MOBILE MENU STYLE */
+@media (max-width:768px){
+
+/* SHOW HAMBURGER */
+.menu-toggle{
+display:block;
+}
+
+/* HAMBURGER DEFAULT (HIDDEN ON DESKTOP) */
+.menu-toggle{
+display:none;
+font-size:26px;
+cursor:pointer;
+position:absolute;
+right:20px;
+top:18px;
+z-index:50;
+color:#fff;
+}
+
+/* NAV MENU */
+.nav-menu{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#0a0a0a;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+padding:20px 0;
+
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+}
+
+/* OPEN MENU */
+.nav-menu.active{
+max-height:500px;
+}
+
+/* LINKS */
+.nav-menu a{
+margin:10px 0;
+font-size:16px;
+}
+
+}
+
 
 </style>
 </head>
