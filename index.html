@@ -521,12 +521,12 @@ transition:0.3s;
 
   /* HIDDEN INITIALLY */
 opacity:0;
-pointer-events:none;
+visibility:hidden;
 }
 
 .back-to-top.show{
 opacity:1;
-pointer-events:auto;
+visibility:visible;
 }
   
 .back-to-top:hover{
@@ -753,13 +753,13 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 });
 
 // SHOW BUTTON AFTER SCROLL
-const topBtn = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function(){
+  const btn = document.querySelector('.back-to-top');
+  
   if(window.scrollY > 300){
-    topBtn.classList.add('show');
+    btn.classList.add('show');
   } else {
-    topBtn.classList.remove('show');
+    btn.classList.remove('show');
   }
 });
   
