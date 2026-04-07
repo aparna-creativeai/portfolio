@@ -552,22 +552,33 @@ overflow:hidden;
 .hero h2{
   font-size:44px;
   padding:10px 10px;
-  margin:10px;
+  margin:auto;
 }
   
 .hero p{
   font-size:22px;
 line-height:1.6;
   text-align:left;
-margin:10px;
+margin:auto;
   }
 
   
 .hero-right{
-max-width:640px;
+max-width:360px;
 margin:auto;
 }
-  
+
+/* IMAGE FIX */
+.image-frame{
+width:360px;
+height:700px;
+}
+
+.image-frame img{
+width:360px;
+height:700px;
+}
+
 /* FIX BUTTON SPACING */
 .hero-btn{
 width:190px;
@@ -586,24 +597,15 @@ color:#888;
 position:right;
 }
 
-/* IMAGE FIX */
-.image-frame{
-width:400px;
-height:700px;
-}
-
-.image-frame img{
-width:400px;
-height:700px;
-}
-
 /* WORK GRID */
 .card{
-width:600px;
+width:500px;
 margin:auto;
 justify-content:center;
-  font-size:22px;
 }
+
+.card-content{padding:16px;}
+.card-title{font-size:22px;}
 
 /* CENTER SECTION HEADINGS */
 section h3{
@@ -626,8 +628,9 @@ line-height:1.6;
 .contact-box{
 padding:auto;
 position:center;
-width:400px;
-height:600px;
+width:300px;
+height:300px;
+  margin:auto;
 }
 
 .contact-buttons{
