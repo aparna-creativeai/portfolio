@@ -652,11 +652,11 @@ text-align:center;
 /* CROSS LINES (LIKE STATS) */
 /* CROSS DIVIDER */
 /* PERFECT CENTER CROSS (LIKE STATS) */
+/* FADED CROSS LINES (PREMIUM LOOK) */
 .process-grid::before,
 .process-grid::after{
 content:"";
 position:absolute;
-background:rgba(255,255,255,0.05);
 }
 
 /* vertical line */
@@ -666,6 +666,13 @@ height:100%;
 left:50%;
 top:0;
 transform:translateX(-0.5px);
+
+background:linear-gradient(
+to bottom,
+transparent,
+rgba(255,255,255,0.08),
+transparent
+);
 }
 
 /* horizontal line */
@@ -675,6 +682,13 @@ width:100%;
 top:50%;
 left:0;
 transform:translateY(-0.5px);
+
+background:linear-gradient(
+to right,
+transparent,
+rgba(255,255,255,0.08),
+transparent
+);
 }
 
 /* TITLE */
