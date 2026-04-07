@@ -764,6 +764,45 @@ color:#888;
 line-height:1.6;
 }
 
+/* ===== CASE STUDY (EXPANDABLE) ===== */
+
+.case-study{
+margin-top:10px;
+border-top:1px solid rgba(255,255,255,0.08);
+padding:10px 15px;
+}
+
+/* CLICK TEXT */
+.case-study summary{
+cursor:pointer;
+font-size:12px;
+color:#00C9D3;
+list-style:none;
+outline:none;
+}
+
+.case-study summary::-webkit-details-marker{
+display:none;
+}
+
+/* CONTENT */
+.case-content{
+margin-top:15px;
+text-align:left;
+}
+
+.case-content h4{
+font-size:13px;
+margin:10px 0 5px;
+color:#fff;
+}
+
+.case-content p{
+font-size:12px;
+color:#888;
+line-height:1.6;
+}
+  
 </style>
 </head>
 
@@ -849,16 +888,36 @@ line-height:1.6;
 
   <!-- VIDEO 1 -->
   <div class="card">
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/SvL8IVK2Njk"></iframe>
-  </div>
-  
-<div class="card-content">
-<div class="card-title">Dream Fragrance - VELORE</div>
-<div class="card-desc">Advertising Concept: Perfume could trigger memories</div>
-<div class="card-desc">..</div>
-<div class="card-desc">Tool: Canva</div>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/SvL8IVK2Njk"></iframe>
 </div>
+
+<div class="card-content">
+<div class="card-title">VELORÉ</div>
+<div class="card-desc">AI Film</div>
+</div>
+
+<!-- EXPANDABLE SECTION -->
+<details class="case-study">
+
+<summary>View Process</summary>
+
+<div class="case-content">
+
+<h4>Idea</h4>
+<p>A cinematic exploration of identity and motion through AI-generated fashion storytelling.</p>
+
+<h4>Prompt</h4>
+<p>High-fashion cinematic visuals, slow motion fabric flow, soft lighting, editorial composition, luxury tone.</p>
+
+<h4>Execution</h4>
+<p>Generated sequences using AI tools, refined visuals, edited into a cohesive film with cinematic pacing.</p>
+
+</div>
+
+</details>
+
 </div>
 
   <!-- VIDEO 2 -->
