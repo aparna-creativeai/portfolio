@@ -421,6 +421,7 @@ color:#fff;
 display:block;
   background: #000;
 }
+}
 
 /* NAV MENU */
 .nav-menu{
@@ -534,57 +535,71 @@ background:#000;
 color:#ffb347;
 }
 
- /* ===== CLEAN MOBILE FIX ===== */
+
+/* ===== CLEAN MOBILE FIX ===== */
 @media (max-width:768px){
+
+/* GENERAL TEXT FIX */
+body{
+font-size:16px;
+text-align:center;
+}
 
 /* HERO SECTION */
 .hero{
-flex-direction:two-column;
-max-width:750px;
-align-items:left;
-padding:10px auto;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding:120px 20px 60px;
+position:relative;
 }
 
 .hero-left{
-max-width:760px;
-margin:10px auto;
-text-align:left;
+max-width:100%;
+margin:auto;
+text-align:center;
 }
 
-.hero-right{
-max-width:760px;
-margin:auto 10px;
-text-align:center;
+.hero h2{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.6;
 }
 
 /* FIX BUTTON SPACING */
 .hero-btn{
-margin-top:30px;
-position:left;
+margin-top:20px;
 }
 
 /* FIX SCROLL DOWN POSITION */
 .scroll-down{
-margin-top:30px;
-position:right;
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
 }
 
 /* IMAGE FIX */
 .image-frame{
-width:600px;
-max-width:760px;
-margin:10px auto;
+width:100%;
+max-width:320px;
+margin:30px auto 0;
+display:block;
 }
 
 .image-frame img{
-width:580px
-height:800px;
+width:100%;
+height:auto;
+display:block;
 }
 
 /* WORK GRID */
 .grid{
 grid-template-columns:1fr;
-gap:15px;
+gap:20px;
 }
 
 .card{
@@ -594,38 +609,39 @@ margin:auto;
 
 /* CENTER SECTION HEADINGS */
 section h3{
-text-align:left;
-margin:10px auto;
-font-size:18px;
+text-align:center;
+font-size:22px;
+margin-bottom:20px;
 }
 
 /* ABOUT TEXT */
 .about p{
-max-width:auto;
-margin:10px auto;
-text-align:left;
-font-size:18px;
-line-height:1.6;
+max-width:90%;
+margin:0 auto 20px;
+text-align:center;
+font-size:16px;
+line-height:1.7;
 }
 
 /* CONTACT SECTION */
 .contact-box{
-padding:10px 10px;
-position:center;
-max-width:600px
+padding:40px 20px;
 }
 
 .contact-buttons{
 flex-direction:column;
 align-items:center;
-width:100%;
+}
+
+.contact-buttons a{
+width:80%;
 }
 
 /* FIX BACK TO TOP BUTTON SHAPE */
 .back-to-top{
 width:40px;
 height:40px;
-border-radius:auto;
+border-radius:50%;
 }
 
 }
