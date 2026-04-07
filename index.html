@@ -640,7 +640,74 @@ border-radius:auto;
 }
 
 }
-  
+
+/* ===== PROCESS SECTION ===== */
+
+.process-section{
+padding:120px 60px;
+text-align:center;
+}
+
+.process-title{
+font-size:48px;
+font-weight:300;
+margin-bottom:80px;
+}
+
+.process-title span{
+color:#00C9D3;
+font-style:italic;
+}
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:80px 60px;
+max-width:900px;
+margin:auto;
+}
+
+.process-item{
+text-align:center;
+}
+
+.process-number{
+font-size:14px;
+color:#666;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+/* ICON STYLE (CIRCLE) */
+.process-icon{
+width:90px;
+height:90px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,0.08);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin:0 auto 25px;
+
+font-size:28px;
+color:#00C9D3;
+}
+
+.process-item h4{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.process-item p{
+font-size:14px;
+color:#888;
+line-height:1.6;
+max-width:220px;
+margin:auto;
+}
+
 </style>
 </head>
 
@@ -714,6 +781,49 @@ border-radius:auto;
 
   </div>
 
+</section>
+
+<section class="process-section">
+
+<h3 class="process-title">
+Creative <span>Process</span>
+</h3>
+
+<div class="process-grid">
+
+<!-- ITEM 1 -->
+<div class="process-item">
+<div class="process-number">01</div>
+<div class="process-icon">💡</div>
+<h4>Idea</h4>
+<p>Develop a concept or narrative</p>
+</div>
+
+<!-- ITEM 2 -->
+<div class="process-item">
+<div class="process-number">02</div>
+<div class="process-icon">💬</div>
+<h4>Prompt</h4>
+<p>Translate the idea into structured AI prompts</p>
+</div>
+
+<!-- ITEM 3 -->
+<div class="process-item">
+<div class="process-number">03</div>
+<div class="process-icon">⚙️</div>
+<h4>AI Tools</h4>
+<p>Generate visuals using AI tools</p>
+</div>
+
+<!-- ITEM 4 -->
+<div class="process-item">
+<div class="process-number">04</div>
+<div class="process-icon">🎞️</div>
+<h4>Final Film</h4>
+<p>Edit, sequence, and create a cinematic output</p>
+</div>
+
+</div>
 </section>
   
 <section id="concepts" class="fade">
