@@ -650,25 +650,31 @@ text-align:center;
 }
 
 /* CROSS LINES (LIKE STATS) */
-.process-section::before,
-.process-section::after{
+/* CROSS DIVIDER */
+.process-grid::before,
+.process-grid::after{
 content:"";
 position:absolute;
-background:rgba(255,255,255,0.05);
+background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
 }
 
-.process-section::before{
+/* vertical line */
+.process-grid::before{
 width:1px;
 height:100%;
 left:50%;
 top:0;
+transform:translateX(-50%);
 }
 
-.process-section::after{
+/* horizontal line */
+.process-grid::after{
 height:1px;
 width:100%;
 top:50%;
 left:0;
+transform:translateY(-50%);
+background:linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
 }
 
 /* TITLE */
@@ -815,54 +821,6 @@ line-height:1.6;
   </div>
 
 </section>
-
-<section class="process-section">
-
-<h3 class="process-title">
-Creative <span>Process</span>
-</h3>
-
-<div class="process-grid">
-
-<div class="process-item">
-<div class="process-number">01</div>
-<div class="process-icon">
-<svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c1 1 2 2 2 4h4c0-2 1-3 2-4a7 7 0 0 0-4-12z"/></svg>
-</div>
-<h4>Idea</h4>
-<p>Develop a concept<br>or narrative</p>
-</div>
-
-<div class="process-item">
-<div class="process-number">02</div>
-<div class="process-icon">
-<svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
-</div>
-<h4>Prompt</h4>
-<p>Translate the idea<br>into AI prompts</p>
-</div>
-
-<div class="process-item">
-<div class="process-number">03</div>
-<div class="process-icon">
-<svg viewBox="0 0 24 24"><path d="M9 3h6v6H9zM3 9h6v6H3zM15 9h6v6h-6zM9 15h6v6H9z"/></svg>
-</div>
-<h4>AI Tools</h4>
-<p>Generate visuals<br>using AI tools</p>
-</div>
-
-<div class="process-item">
-<div class="process-number">04</div>
-<div class="process-icon">
-<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 8l8 4-8 4z"/></svg>
-</div>
-<h4>Final Film</h4>
-<p>Edit and sequence<br>into cinematic output</p>
-</div>
-
-</div>
-
-</section>
   
 <section id="concepts" class="fade">
 <div class="concepts-title">
@@ -930,6 +888,54 @@ Creative <span>Process</span>
 </div>
   
 </div>
+</section>
+
+<section class="process-section">
+
+<h3 class="process-title">
+Creative <span>Process</span>
+</h3>
+
+<div class="process-grid">
+
+<div class="process-item">
+<div class="process-number">01</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c1 1 2 2 2 4h4c0-2 1-3 2-4a7 7 0 0 0-4-12z"/></svg>
+</div>
+<h4>Idea</h4>
+<p>Develop a concept<br>or narrative</p>
+</div>
+
+<div class="process-item">
+<div class="process-number">02</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+</div>
+<h4>Prompt</h4>
+<p>Translate the idea<br>into AI prompts</p>
+</div>
+
+<div class="process-item">
+<div class="process-number">03</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M9 3h6v6H9zM3 9h6v6H3zM15 9h6v6h-6zM9 15h6v6H9z"/></svg>
+</div>
+<h4>AI Tools</h4>
+<p>Generate visuals<br>using AI tools</p>
+</div>
+
+<div class="process-item">
+<div class="process-number">04</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 8l8 4-8 4z"/></svg>
+</div>
+<h4>Final Film</h4>
+<p>Edit and sequence<br>into cinematic output</p>
+</div>
+
+</div>
+
 </section>
 
 <section id="about" class="about fade">
