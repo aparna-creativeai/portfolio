@@ -645,13 +645,38 @@ border-radius:auto;
 
 .process-section{
 padding:120px 60px;
+position:relative;
 text-align:center;
 }
 
+/* CROSS LINES (LIKE STATS) */
+.process-section::before,
+.process-section::after{
+content:"";
+position:absolute;
+background:rgba(255,255,255,0.05);
+}
+
+.process-section::before{
+width:1px;
+height:100%;
+left:50%;
+top:0;
+}
+
+.process-section::after{
+height:1px;
+width:100%;
+top:50%;
+left:0;
+}
+
+/* TITLE */
 .process-title{
 font-size:48px;
 font-weight:300;
 margin-bottom:80px;
+letter-spacing:1px;
 }
 
 .process-title span{
@@ -659,15 +684,17 @@ color:#00C9D3;
 font-style:italic;
 }
 
+/* GRID */
 .process-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:80px 60px;
-max-width:900px;
+max-width:800px;
 margin:auto;
 }
 
+/* ITEMS */
 .process-item{
+padding:60px 40px;
 text-align:center;
 }
 
@@ -678,25 +705,33 @@ margin-bottom:20px;
 letter-spacing:2px;
 }
 
-/* ICON STYLE (CIRCLE) */
+/* ICON CIRCLE */
 .process-icon{
-width:90px;
-height:90px;
+width:100px;
+height:100px;
+margin:0 auto 25px;
+
 border-radius:50%;
-border:1px solid rgba(255,255,255,0.08);
+border:1px solid #00C9D3;
 
 display:flex;
 align-items:center;
 justify-content:center;
-
-margin:0 auto 25px;
-
-font-size:28px;
-color:#00C9D3;
 }
 
+/* SVG ICON */
+.process-icon svg{
+width:30px;
+height:30px;
+stroke:#00C9D3;
+fill:none;
+stroke-width:1.5;
+}
+
+/* TEXT */
 .process-item h4{
-font-size:22px;
+font-size:26px;
+font-weight:300;
 margin-bottom:10px;
 }
 
@@ -704,8 +739,6 @@ margin-bottom:10px;
 font-size:14px;
 color:#888;
 line-height:1.6;
-max-width:220px;
-margin:auto;
 }
 
 </style>
@@ -791,39 +824,44 @@ Creative <span>Process</span>
 
 <div class="process-grid">
 
-<!-- ITEM 1 -->
 <div class="process-item">
 <div class="process-number">01</div>
-<div class="process-icon">💡</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c1 1 2 2 2 4h4c0-2 1-3 2-4a7 7 0 0 0-4-12z"/></svg>
+</div>
 <h4>Idea</h4>
-<p>Develop a concept or narrative</p>
+<p>Develop a concept<br>or narrative</p>
 </div>
 
-<!-- ITEM 2 -->
 <div class="process-item">
 <div class="process-number">02</div>
-<div class="process-icon">💬</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+</div>
 <h4>Prompt</h4>
-<p>Translate the idea into structured AI prompts</p>
+<p>Translate the idea<br>into AI prompts</p>
 </div>
 
-<!-- ITEM 3 -->
 <div class="process-item">
 <div class="process-number">03</div>
-<div class="process-icon">⚙️</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M9 3h6v6H9zM3 9h6v6H3zM15 9h6v6h-6zM9 15h6v6H9z"/></svg>
+</div>
 <h4>AI Tools</h4>
-<p>Generate visuals using AI tools</p>
+<p>Generate visuals<br>using AI tools</p>
 </div>
 
-<!-- ITEM 4 -->
 <div class="process-item">
 <div class="process-number">04</div>
-<div class="process-icon">🎞️</div>
+<div class="process-icon">
+<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 8l8 4-8 4z"/></svg>
+</div>
 <h4>Final Film</h4>
-<p>Edit, sequence, and create a cinematic output</p>
+<p>Edit and sequence<br>into cinematic output</p>
 </div>
 
 </div>
+
 </section>
   
 <section id="concepts" class="fade">
