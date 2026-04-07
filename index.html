@@ -651,11 +651,12 @@ text-align:center;
 
 /* CROSS LINES (LIKE STATS) */
 /* CROSS DIVIDER */
+/* PERFECT CENTER CROSS (LIKE STATS) */
 .process-grid::before,
 .process-grid::after{
 content:"";
 position:absolute;
-background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
+background:rgba(255,255,255,0.05);
 }
 
 /* vertical line */
@@ -664,7 +665,7 @@ width:1px;
 height:100%;
 left:50%;
 top:0;
-transform:translateX(-50%);
+transform:translateX(-0.5px);
 }
 
 /* horizontal line */
@@ -673,8 +674,7 @@ height:1px;
 width:100%;
 top:50%;
 left:0;
-transform:translateY(-50%);
-background:linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+transform:translateY(-0.5px);
 }
 
 /* TITLE */
@@ -696,12 +696,17 @@ display:grid;
 grid-template-columns:repeat(2,1fr);
 max-width:800px;
 margin:auto;
+position:relative;
 }
 
 /* ITEMS */
 .process-item{
 padding:60px 40px;
 text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 }
 
 .process-number{
