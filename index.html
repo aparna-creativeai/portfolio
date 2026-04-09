@@ -104,8 +104,7 @@ section{padding:120px 60px;}
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
-margin-top:50px;
-  row-gap:40px;
+align-items:start; /* ⭐ IMPORTANT FIX */
 }
   
 .card{
@@ -124,9 +123,12 @@ position:absolute;
 inset:0;
 background:linear-gradient(90deg,#00C9D3,#00F2FF);
 opacity:0.05;
-filter:blur(50px);
+filter:blur(40px);
 transition:0.5s;
+animation: moveCardBG 80s linear infinite;
+  
   pointer-events:none;
+  z-index:0; /* IMPORTANT*/
 }
   
 .card:hover::before{opacity:0.12;}
@@ -771,11 +773,10 @@ line-height:1.6;
 /* ===== CASE STUDY (EXPANDABLE) ===== */
 
 .case-study{
-margin-top:15px;
+margin-top:10px;
 border-top:1px solid rgba(255,255,255,0.08);
 padding:10px 15px;
-  background:#0f0f0f;
-border-radius:0 0 10px 10px;
+  background:#0a0a0a;
 }
 
 /* CLICK TEXT */
