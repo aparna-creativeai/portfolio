@@ -662,6 +662,13 @@ border-radius:auto;
 
 /* ===== PROCESS SECTION ===== */
 
+/* GRID */
+.process-grid{
+max-width:800px;
+margin:0 auto;
+position:relative; /* ⭐ THIS FIXES CROSS ALIGNMENT */
+}
+
 .process-section{
 padding:120px 60px;
 position:relative;
@@ -674,12 +681,6 @@ text-align:center;
 .process-grid::after{
 content:"";
 position:absolute;
-}
-
-.process-grid{
-  max-width:800px;
-  margin:0 auto;
-  position:relativd; /* very IMP*/
 }
 
 /* vertical line */
@@ -730,14 +731,6 @@ max-width:300px;
 background:linear-gradient(90deg, transparent, #FFCC31, transparent);
 }
   
-/* GRID */
-.process-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-max-width:800px;
-margin:auto;
-position:relative;
-}
 
 /* ITEMS */
 .process-item{
