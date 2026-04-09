@@ -166,10 +166,11 @@ color:#00C9D3;
 }
   
 .about p{
-line-height:1.6;
-letter-spacing:1px;
+max-width:700px;
+margin:0 auto 20px;
+text-align:center;
+line-height:1.8;
 color:#aaa;
-margin-bottom:14px;
 }
   
   
@@ -937,30 +938,32 @@ color:#ffb347;
 
 /* ===== GLOBAL SECTION TITLES ===== */
 
+/* ===== FIXED GLOBAL SECTION TITLES ===== */
+
 .section-title{
+  line-height:1;
 display:flex;
 align-items:center;
 justify-content:center;
 gap:15px;
+
+max-width:900px;   /* ⭐ keeps everything centered */
+margin:0 auto 60px;
+
 font-size:18px;
 letter-spacing:2px;
-margin-bottom:60px;
 text-transform:uppercase;
+color:#fff;
 }
 
-/* lines */
+/* side lines */
 .section-title span{
 flex:1;
 height:1px;
 background:linear-gradient(to right, transparent, #FFCC31, transparent);
 }
 
-/* default text */
-.section-title{
-color:#fff;
-}
-
-/* highlight word */
+/* highlighted word */
 .section-title em{
 font-style:normal;
 background:linear-gradient(90deg,#00C9D3,#00F2FF);
@@ -979,6 +982,14 @@ max-width:700px;
 margin:0 auto 20px;
 }
 
+#about .section-title span{
+background:linear-gradient(to right, transparent, #FFCC31, transparent);
+}
+
+#contact .section-title{
+max-width:600px;
+}
+  
 </style>
 </head>
 
@@ -1027,9 +1038,9 @@ margin:0 auto 20px;
 </div>
 
 
-<section class="stats fade">
-<h3 class="section-title"><span></span>Creative <em>Impact</em>
-<span></span></h3>
+<h3 class="section-title">
+<span></span>Creative <em>Impact</em><span></span></h3>
+  
   <div class="stats-grid">
 
     <div class="stat">
