@@ -140,9 +140,10 @@ box-shadow:0 6px 15px rgba(76,196,202,0.12);
 .video{
 position:relative;
 padding-bottom:56.25%;
-border-radius:10px;
-overflow:hidden; /* ✅ ensures clean rounded mask */
+border-radius:10px 10px 0 0; /* only top rounded */
+overflow:hidden;
 }
+  
 .video iframe{
 position:absolute;
 width:100%;
@@ -783,10 +784,12 @@ line-height:1.6;
 /* ===== CASE STUDY (EXPANDABLE) ===== */
 
 .case-study{
-margin-top:10px;
-border-top:1px solid rgba(255,255,255,0.08);
-padding:10px 15px;
-  background:#0a0a0a;
+margin-top:-5px; /* pulls it closer to video */
+padding:15px;
+background:#0a0a0a;
+
+border-radius:0 0 10px 10px; /* ONLY bottom rounded */
+border-top:none;
 }
 
 /* CLICK TEXT */
@@ -888,6 +891,41 @@ background:linear-gradient(to right, transparent, #ffb347, transparent);
 .case-study[open] summary .text{
 color:#ffb347;
 }
+
+                           /* ===== CINEMATIC VIEW PROCESS (FORCED) ===== */
+
+.process-toggle{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+cursor:pointer;
+font-size:12px;
+letter-spacing:1px;
+color:#00C9D3;
+padding:12px 0;
+}
+
+/* lines */
+.process-toggle span{
+flex:1;
+height:1px;
+background:linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+/* hover */
+.process-toggle:hover{
+color:#ffb347;
+}
+
+.process-toggle:hover span{
+background:linear-gradient(to right, transparent, #ffb347, transparent);
+}
+
+/* open state */
+.case-study[open] .process-toggle{
+color:#ffb347;
+}
   
 </style>
 </head>
@@ -987,10 +1025,10 @@ color:#ffb347;
 <!-- EXPANDABLE SECTION -->
 <details class="case-study">
 
-<summary>
-<span class="line"></span>
-<span class="text">View Process</span>
-<span class="line"></span>
+<summary class="process-toggle">
+<span></span>
+View Process
+<span></span>
 </summary>
 
 <div class="case-content">
