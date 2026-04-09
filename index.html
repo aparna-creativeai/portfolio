@@ -933,6 +933,39 @@ background:linear-gradient(to right, transparent, #ffb347, transparent);
 .case-study[open] .process-toggle{
 color:#ffb347;
 }
+
+ /* ===== CLEAN GLOBAL SECTION TITLES ===== */
+
+.section-title{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+width:100%;
+max-width:650px;   /* ⭐ controlled line length */
+margin:0 auto 50px;
+
+font-size:18px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#fff;
+}
+
+/* yellow lines */
+.section-title span{
+flex:1;
+height:1px;
+background:linear-gradient(to right, transparent, #FFCC31, transparent);
+}
+
+/* highlighted word */
+.section-title em{
+font-style:normal;
+background:linear-gradient(90deg,#00C9D3,#00F2FF);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
   
 </style>
 </head>
@@ -1012,7 +1045,13 @@ color:#ffb347;
 <section id="concepts" class="fade">
 <div class="concepts-title">
   <div class="concepts-line"></div>
-  <h3>Concepts</h3>
+  
+  <h3 class="section-title">
+<span></span>
+My <em>Concepts</em>
+<span></span>
+</h3>
+  
   <div class="concepts-line"></div>
 </div>
 <div class="grid">
