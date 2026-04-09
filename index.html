@@ -662,12 +662,6 @@ border-radius:auto;
 
 /* ===== PROCESS SECTION ===== */
 
-/* GRID */
-.process-grid{
-max-width:800px;
-margin:0 auto;
-position:relative; /* ⭐ THIS FIXES CROSS ALIGNMENT */
-}
 
 .process-section{
 padding:120px 60px;
@@ -730,7 +724,13 @@ height:1px;
 max-width:300px;
 background:linear-gradient(90deg, transparent, #FFCC31, transparent);
 }
-  
+
+/* GRID */
+.process-grid{
+max-width:800px;
+margin:0 auto;
+position:relative; /* ⭐ THIS FIXES CROSS ALIGNMENT */
+}
 
 /* ITEMS */
 .process-item{
@@ -770,7 +770,7 @@ height:30px;
 stroke:#00C9D3;
 fill:none;
 stroke-width:1.5;
-  align-items:center;
+  justify-content:center;
 }
 
 /* TEXT */
@@ -898,7 +898,8 @@ background:linear-gradient(to right, transparent, #ffb347, transparent);
 color:#ffb347;
 }
 
-                           /* ===== CINEMATIC VIEW PROCESS (FORCED) ===== */
+  
+/* ===== CINEMATIC VIEW PROCESS (FORCED) ===== */
 
 .process-toggle{
 display:flex;
