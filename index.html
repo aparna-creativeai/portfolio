@@ -679,12 +679,14 @@ width:1px;
 height:100%;
 left:50%;
 top:0;
-  transform:translateX(-50%);
+transform:translateX(-0.5px);
 
 background:linear-gradient(
 to bottom,
 transparent,
-rgba(0,201,211,0.15),transparent);
+rgba(0,201,211,0.15),
+transparent
+);
 }
 
 /* horizontal line */
@@ -693,17 +695,19 @@ height:1px;
 width:100%;
 top:50%;
 left:0;
- transform:translateX(-50%);
+transform:translateY(-0.5px);
 
 background:linear-gradient(
 to right,
 transparent,
-rgba(0,201,211,0.15),transparent);
+rgba(0,201,211,0.15),
+transparent
+);
 }
 
 /* TITLE */
 .process-title{
-font-size:24px;
+font-size:48px;
 font-weight:300;
 margin-bottom:80px;
 letter-spacing:1px;
@@ -714,13 +718,6 @@ color:#00C9D3;
 font-style:italic;
 }
 
-.process-title-line{
-flex:1;
-height:1px;
-max-width:300px;
-background:linear-gradient(90deg, transparent, #FFCC31, transparent);
-}
-  
 /* GRID */
 .process-grid{
 display:grid;
@@ -768,12 +765,11 @@ height:30px;
 stroke:#00C9D3;
 fill:none;
 stroke-width:1.5;
-  align-items:center;
 }
 
 /* TEXT */
 .process-item h4{
-font-size:22px;
+font-size:26px;
 font-weight:300;
 margin-bottom:10px;
 }
@@ -908,9 +904,6 @@ font-size:12px;
 letter-spacing:1px;
 color:#00C9D3;
 padding:12px 0;
-  flex:1;
-height:1px;
-background:linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
 }
 
 /* lines */
@@ -1068,7 +1061,7 @@ View Process
 </div>
 
 <details class="case-study">
-<summary class="process-toggle"> <span></span> View Process <span></span> </summary>
+<summary>View Process</summary>
 
 <div class="case-content">
 
@@ -1100,7 +1093,7 @@ View Process
 </div>
 
 <details class="case-study">
-<summary class="process-toggle"> <span></span> View Process <span></span> </summary>
+<summary>View Process</summary>
 
 <div class="case-content">
 
@@ -1132,7 +1125,7 @@ View Process
 </div>
 
 <details class="case-study">
-<summary class="process-toggle"> <span></span> View Process <span></span> </summary>
+<summary>View Process</summary>
 
 <div class="case-content">
 
@@ -1164,7 +1157,7 @@ View Process
 </div>
 
 <details class="case-study">
-<summary class="process-toggle"> <span></span> View Process <span></span> </summary>
+<summary>View Process</summary>
 
 <div class="case-content">
 
@@ -1196,7 +1189,7 @@ View Process
 </div>
 
 <details class="case-study">
-<summary class="process-toggle"> <span></span> View Process <span></span> </summary>
+<summary>View Process</summary>
 
 <div class="case-content">
 
