@@ -727,9 +727,11 @@ background:linear-gradient(90deg, transparent, #FFCC31, transparent);
 
 /* GRID */
 .process-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
 max-width:800px;
-margin:0 auto;
-position:relative; /* ⭐ THIS FIXES CROSS ALIGNMENT */
+margin:auto;
+position:relative;
 }
 
 /* ITEMS */
