@@ -105,15 +105,17 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 margin-top:50px;
+  row-gap:40px;
 }
   
 .card{
 background:#111;
 border-radius:10px;
-overflow:visible;
 border:1px solid rgba(255,255,255,0.06);
 position:relative;
-transition:0.3s;
+
+display:flex;
+flex-direction:column;
 }
   
 .card::before{
@@ -769,9 +771,11 @@ line-height:1.6;
 /* ===== CASE STUDY (EXPANDABLE) ===== */
 
 .case-study{
-margin-top:10px;
+margin-top:15px;
 border-top:1px solid rgba(255,255,255,0.08);
 padding:10px 15px;
+  background:#0f0f0f;
+border-radius:0 0 10px 10px;
 }
 
 /* CLICK TEXT */
