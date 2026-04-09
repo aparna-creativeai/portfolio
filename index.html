@@ -660,90 +660,69 @@ border-radius:auto;
 
 }
 
-/* ===== PROCESS SECTION ===== */
-
+/* ===== PROCESS SECTION (CLEAN FINAL) ===== */
 
 .process-section{
 padding:120px 60px;
-position:relative;
 text-align:center;
 }
 
-/* PERFECT CENTER CROSS (LIKE STATS) */
-/* FADED CROSS LINES (PREMIUM LOOK) */
-.process-grid::before,
-.process-grid::after{
-content:"";
-position:absolute;
-}
-
-/* vertical line */
-.process-grid::before{
-width:1px;
-height:100%;
-left:50%;
-top:0;
-  transform:translateX(-50%);
-
-background:linear-gradient(
-to bottom,
-transparent,
-rgba(0,201,211,0.15),transparent);
-}
-
-/* horizontal line */
-.process-grid::after{
-height:1px;
-width:100%;
-top:50%;
-left:0;
- transform:translateX(-50%);
-
-background:linear-gradient(
-to right,
-transparent,
-rgba(0,201,211,0.15),transparent);
-}
-
-/* TITLE */
-.process-title{
-font-size:24px;
-font-weight:300;
-margin-bottom:80px;
-letter-spacing:1px;
-}
-
-.process-title span{
-color:#00C9D3;
-font-style:italic;
-}
-
-.process-title-line{
-flex:1;
-height:1px;
-max-width:300px;
-background:linear-gradient(90deg, transparent, #FFCC31, transparent);
-}
-
-/* GRID */
+/* GRID (MAIN CONTAINER) */
 .process-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 max-width:800px;
-margin:auto;
-position:relative;
+margin:0 auto;
+position:relative; /* ⭐ REQUIRED FOR CROSS */
+}
+
+/* ===== CENTER CROSS (FIXED) ===== */
+
+/* vertical line */
+.process-grid::before{
+content:"";
+position:absolute;
+width:1px;
+height:100%;
+left:50%;
+top:0;
+transform:translateX(-50%);
+background:linear-gradient(
+to bottom,
+transparent,
+rgba(0,201,211,0.15),
+transparent
+);
+}
+
+/* horizontal line */
+.process-grid::after{
+content:"";
+position:absolute;
+height:1px;
+width:100%;
+top:50%;
+left:0;
+transform:translateY(-50%); /* ⭐ FIXED (was wrong before) */
+background:linear-gradient(
+to right,
+transparent,
+rgba(0,201,211,0.15),
+transparent
+);
 }
 
 /* ITEMS */
 .process-item{
 padding:60px 40px;
-text-align:center;
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+text-align:center;
 }
 
+/* NUMBER */
 .process-number{
 font-size:16px;
 color:#888;
@@ -755,7 +734,7 @@ letter-spacing:2px;
 .process-icon{
 width:100px;
 height:100px;
-margin:0 auto 25px;
+margin-bottom:25px;
 
 border-radius:50%;
 border:1px solid #00C9D3;
@@ -772,20 +751,21 @@ height:30px;
 stroke:#00C9D3;
 fill:none;
 stroke-width:1.5;
-  justify-content:center;
 }
 
-/* TEXT */
+/* TITLE */
 .process-item h4{
 font-size:22px;
 font-weight:300;
 margin-bottom:10px;
 }
 
+/* TEXT */
 .process-item p{
 font-size:14px;
 color:#888;
 line-height:1.6;
+max-width:260px;
 }
 
 
