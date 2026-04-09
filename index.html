@@ -934,6 +934,39 @@ background:linear-gradient(to right, transparent, #ffb347, transparent);
 .case-study[open] .process-toggle{
 color:#ffb347;
 }
+
+/* ===== GLOBAL SECTION TITLES ===== */
+
+.section-title{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+font-size:18px;
+letter-spacing:2px;
+margin-bottom:60px;
+text-transform:uppercase;
+}
+
+/* lines */
+.section-title span{
+flex:1;
+height:1px;
+background:linear-gradient(to right, transparent, #FFCC31, transparent);
+}
+
+/* default text */
+.section-title{
+color:#fff;
+}
+
+/* highlight word */
+.section-title em{
+font-style:normal;
+background:linear-gradient(90deg,#00C9D3,#00F2FF);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
   
 </style>
 </head>
@@ -1013,7 +1046,7 @@ color:#ffb347;
 <section id="concepts" class="fade">
 <div class="concepts-title">
   <div class="concepts-line"></div>
-  <h3>Concepts</h3>
+  <h3 class="section-title"><span></span>My <em>Concepts</em><span></span></h3>
   <div class="concepts-line"></div>
 </div>
 <div class="grid">
@@ -1222,8 +1255,10 @@ View Process
 
 <section class="process-section">
 
-<h3 class="process-title">
-Creative <span>Process</span>
+<h3 class="section-title">
+<span></span>
+Creative <em>Process</em>
+<span></span>
 </h3>
 
 <div class="process-grid">
@@ -1272,7 +1307,7 @@ Creative <span>Process</span>
   
 <div class="about-title">
   <div class="about-line"></div>
-  <h3>From Pixels to CiNEMA</h3>
+  <h3 class="section-title"><span></span>From<em>Pixels</em> to <em>CiNEMA</em><span></span></h3>
   <div class="about-line"></div>
 </div>
 
@@ -1293,7 +1328,7 @@ Creative <span>Process</span>
 <section id="contact" class="contact fade">
 
 <div class="contact-box">
-<h3>Contact</h3>
+<h3 class="section-title"><span></span>Contact<span></span></h3>
 
 <div class="contact-buttons">
 <a href="https://www.linkedin.com/in/aparna-r-56769910b/" target="_blank">Connect on LinkedIn</a>
