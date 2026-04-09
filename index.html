@@ -849,6 +849,46 @@ position:relative;
 z-index:2;
 }
 
+  /* ===== CINEMATIC VIEW PROCESS ===== */
+
+.case-study summary{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+cursor:pointer;
+padding:10px 0;
+}
+
+/* text */
+.case-study summary .text{
+font-size:12px;
+letter-spacing:1px;
+color:#00C9D3;
+transition:0.3s;
+}
+
+/* lines */
+.case-study summary .line{
+flex:1;
+height:1px;
+background:linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+/* hover effect */
+.case-study summary:hover .text{
+color:#ffb347;
+}
+
+.case-study summary:hover .line{
+background:linear-gradient(to right, transparent, #ffb347, transparent);
+}
+
+/* open state */
+.case-study[open] summary .text{
+color:#ffb347;
+}
+  
 </style>
 </head>
 
@@ -947,7 +987,11 @@ z-index:2;
 <!-- EXPANDABLE SECTION -->
 <details class="case-study">
 
-<summary>View Process</summary>
+<summary>
+<span class="line"></span>
+<span class="text">View Process</span>
+<span class="line"></span>
+</summary>
 
 <div class="case-content">
 
