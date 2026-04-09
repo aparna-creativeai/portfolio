@@ -768,21 +768,32 @@ line-height:1.6;
 max-width:260px;
 }
 
-/* ===== MOBILE TITLE FIX ===== */
+/* ===== MOBILE TITLE PERFECT CENTER FIX ===== */
 
 @media (max-width:768px){
 
 .section-title{
-justify-content:center;
+flex-direction:column;   /* ⭐ STACK */
+gap:8px;
 text-align:center;
-margin:0 auto 40px;
+align-items:center;
 }
 
+/* lines full width */
 .section-title span{
-display:block;
+width:60%;
+flex:none;
+}
+
+/* text stays center */
+.section-title em,
+.section-title{
+text-align:center;
 }
 
 }
+
+  
 /* ===== CASE STUDY (EXPANDABLE) ===== */
 
 .case-study{
@@ -1361,8 +1372,7 @@ View Process
 <div class="contact-buttons">
 <a href="https://www.linkedin.com/in/aparna-r-56769910b/" target="_blank">Connect on LinkedIn</a>
 <a href="mailto:aparnashaa@gmail.com" class="contact-buttons"> Let's Collaborate </a>
-<p style="margin-top:10px; color:#888; font-size:14px;">
-aparnashaa@gmail.com
+
 </p>
 </a>
 </div>
